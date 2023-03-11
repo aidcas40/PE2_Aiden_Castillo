@@ -48,16 +48,6 @@ Partial Class frmProduct
         Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.ProductTableAdapter()
         Me.TableAdapterManager = New Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.dgvProduct = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProdIdTextBox = New System.Windows.Forms.TextBox()
         Me.ProdNameTextBox = New System.Windows.Forms.TextBox()
         Me.ProdImgPictureBox = New System.Windows.Forms.PictureBox()
@@ -80,6 +70,23 @@ Partial Class frmProduct
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblUserViewer = New System.Windows.Forms.Label()
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.dgvProduct = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnBackP = New System.Windows.Forms.Button()
+        Me.btnNextP = New System.Windows.Forms.Button()
         lblProdId = New System.Windows.Forms.Label()
         lblProdName = New System.Windows.Forms.Label()
         ProdImgLabel = New System.Windows.Forms.Label()
@@ -93,7 +100,6 @@ Partial Class frmProduct
         Me.pnlProducts.SuspendLayout()
         CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdImgPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProdQtyNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHeader.SuspendLayout()
@@ -101,6 +107,7 @@ Partial Class frmProduct
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mnuMain
@@ -108,7 +115,7 @@ Partial Class frmProduct
         Me.mnuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.mnuMain.Location = New System.Drawing.Point(0, 0)
         Me.mnuMain.Name = "mnuMain"
-        Me.mnuMain.Size = New System.Drawing.Size(784, 24)
+        Me.mnuMain.Size = New System.Drawing.Size(804, 24)
         Me.mnuMain.TabIndex = 0
         Me.mnuMain.Text = "mnuMain"
         '
@@ -178,6 +185,13 @@ Partial Class frmProduct
         '
         'pnlProducts
         '
+        Me.pnlProducts.Controls.Add(Me.btnNextP)
+        Me.pnlProducts.Controls.Add(Me.btnBackP)
+        Me.pnlProducts.Controls.Add(Me.btnAdd)
+        Me.pnlProducts.Controls.Add(Me.btnSave)
+        Me.pnlProducts.Controls.Add(Me.btnDelete)
+        Me.pnlProducts.Controls.Add(Me.dgvProduct)
+        Me.pnlProducts.Controls.Add(Me.btnClose)
         Me.pnlProducts.Controls.Add(Me.pnlHeader)
         Me.pnlProducts.Controls.Add(lblProdId)
         Me.pnlProducts.Controls.Add(Me.ProdIdTextBox)
@@ -197,11 +211,10 @@ Partial Class frmProduct
         Me.pnlProducts.Controls.Add(Me.ProdRelDateDateTimePicker)
         Me.pnlProducts.Controls.Add(lblProdRecDate)
         Me.pnlProducts.Controls.Add(Me.ProdRecDateDateTimePicker)
-        Me.pnlProducts.Controls.Add(Me.dgvProduct)
         Me.pnlProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlProducts.Location = New System.Drawing.Point(0, 27)
+        Me.pnlProducts.Location = New System.Drawing.Point(0, 23)
         Me.pnlProducts.Name = "pnlProducts"
-        Me.pnlProducts.Size = New System.Drawing.Size(784, 435)
+        Me.pnlProducts.Size = New System.Drawing.Size(804, 551)
         Me.pnlProducts.TabIndex = 1
         '
         'AllegroDatabaseDataSet
@@ -225,23 +238,333 @@ Partial Class frmProduct
         Me.TableAdapterManager.UpdateOrder = Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UserTableAdapter = Me.UserTableAdapter
         '
+        'lblProdId
+        '
+        lblProdId.AutoSize = True
+        lblProdId.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblProdId.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdId.Location = New System.Drawing.Point(32, 58)
+        lblProdId.Name = "lblProdId"
+        lblProdId.Size = New System.Drawing.Size(77, 16)
+        lblProdId.TabIndex = 1
+        lblProdId.Text = "Product ID:"
+        '
+        'ProdIdTextBox
+        '
+        Me.ProdIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ProdIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdId", True))
+        Me.ProdIdTextBox.Location = New System.Drawing.Point(134, 55)
+        Me.ProdIdTextBox.Name = "ProdIdTextBox"
+        Me.ProdIdTextBox.ReadOnly = True
+        Me.ProdIdTextBox.Size = New System.Drawing.Size(200, 23)
+        Me.ProdIdTextBox.TabIndex = 2
+        '
+        'lblProdName
+        '
+        lblProdName.AutoSize = True
+        lblProdName.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblProdName.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdName.Location = New System.Drawing.Point(32, 88)
+        lblProdName.Name = "lblProdName"
+        lblProdName.Size = New System.Drawing.Size(48, 16)
+        lblProdName.TabIndex = 3
+        lblProdName.Text = "Name:"
+        '
+        'ProdNameTextBox
+        '
+        Me.ProdNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ProdNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdName", True))
+        Me.ProdNameTextBox.Location = New System.Drawing.Point(134, 85)
+        Me.ProdNameTextBox.Name = "ProdNameTextBox"
+        Me.ProdNameTextBox.Size = New System.Drawing.Size(200, 23)
+        Me.ProdNameTextBox.TabIndex = 4
+        '
+        'ProdImgLabel
+        '
+        ProdImgLabel.AutoSize = True
+        ProdImgLabel.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ProdImgLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        ProdImgLabel.Location = New System.Drawing.Point(373, 148)
+        ProdImgLabel.Name = "ProdImgLabel"
+        ProdImgLabel.Size = New System.Drawing.Size(82, 16)
+        ProdImgLabel.TabIndex = 5
+        ProdImgLabel.Text = "Prod Image:"
+        '
+        'ProdImgPictureBox
+        '
+        Me.ProdImgPictureBox.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.ProductBindingSource, "ProdImg", True))
+        Me.ProdImgPictureBox.Location = New System.Drawing.Point(481, 148)
+        Me.ProdImgPictureBox.Name = "ProdImgPictureBox"
+        Me.ProdImgPictureBox.Size = New System.Drawing.Size(200, 52)
+        Me.ProdImgPictureBox.TabIndex = 6
+        Me.ProdImgPictureBox.TabStop = False
+        '
+        'lblProdMfr
+        '
+        lblProdMfr.AutoSize = True
+        lblProdMfr.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblProdMfr.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdMfr.Location = New System.Drawing.Point(32, 180)
+        lblProdMfr.Name = "lblProdMfr"
+        lblProdMfr.Size = New System.Drawing.Size(97, 16)
+        lblProdMfr.TabIndex = 7
+        lblProdMfr.Text = "Manufacturer:"
+        '
+        'ProdMfrComboBox
+        '
+        Me.ProdMfrComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdMfr", True))
+        Me.ProdMfrComboBox.FormattingEnabled = True
+        Me.ProdMfrComboBox.Items.AddRange(New Object() {"Moog", "Arturia", "Korg", "Roland", "Yamaha", "Ibanez", "Fender", "Rickenbacker", "Universal Audio", "Eventide", "WesAudio", "Tube-Tech"})
+        Me.ProdMfrComboBox.Location = New System.Drawing.Point(134, 176)
+        Me.ProdMfrComboBox.Name = "ProdMfrComboBox"
+        Me.ProdMfrComboBox.Size = New System.Drawing.Size(200, 24)
+        Me.ProdMfrComboBox.TabIndex = 8
+        '
+        'lblProdCtgy
+        '
+        lblProdCtgy.AutoSize = True
+        lblProdCtgy.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblProdCtgy.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdCtgy.Location = New System.Drawing.Point(32, 149)
+        lblProdCtgy.Name = "lblProdCtgy"
+        lblProdCtgy.Size = New System.Drawing.Size(69, 16)
+        lblProdCtgy.TabIndex = 9
+        lblProdCtgy.Text = "Category:"
+        '
+        'ProdCtgyComboBox
+        '
+        Me.ProdCtgyComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdCtgy", True))
+        Me.ProdCtgyComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.ProdCtgyComboBox.FormattingEnabled = True
+        Me.ProdCtgyComboBox.Items.AddRange(New Object() {"Synthesizer", "Electric Guitar", "Guitar Pedal", "Compressor", "Equalizer", "Limiter"})
+        Me.ProdCtgyComboBox.Location = New System.Drawing.Point(134, 145)
+        Me.ProdCtgyComboBox.Name = "ProdCtgyComboBox"
+        Me.ProdCtgyComboBox.Size = New System.Drawing.Size(200, 24)
+        Me.ProdCtgyComboBox.TabIndex = 10
+        '
+        'lblProdPrice
+        '
+        lblProdPrice.AutoSize = True
+        lblProdPrice.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblProdPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdPrice.Location = New System.Drawing.Point(32, 118)
+        lblProdPrice.Name = "lblProdPrice"
+        lblProdPrice.Size = New System.Drawing.Size(43, 16)
+        lblProdPrice.TabIndex = 11
+        lblProdPrice.Text = "Price:"
+        '
+        'ProdPriceTextBox
+        '
+        Me.ProdPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ProdPriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdPrice", True))
+        Me.ProdPriceTextBox.Location = New System.Drawing.Point(134, 115)
+        Me.ProdPriceTextBox.Name = "ProdPriceTextBox"
+        Me.ProdPriceTextBox.Size = New System.Drawing.Size(200, 23)
+        Me.ProdPriceTextBox.TabIndex = 12
+        '
+        'lblProdQty
+        '
+        lblProdQty.AutoSize = True
+        lblProdQty.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblProdQty.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdQty.Location = New System.Drawing.Point(373, 58)
+        lblProdQty.Name = "lblProdQty"
+        lblProdQty.Size = New System.Drawing.Size(65, 16)
+        lblProdQty.TabIndex = 13
+        lblProdQty.Text = "Quantity:"
+        '
+        'ProdQtyNumericUpDown
+        '
+        Me.ProdQtyNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ProdQtyNumericUpDown.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProductBindingSource, "ProdQty", True))
+        Me.ProdQtyNumericUpDown.Location = New System.Drawing.Point(481, 57)
+        Me.ProdQtyNumericUpDown.Name = "ProdQtyNumericUpDown"
+        Me.ProdQtyNumericUpDown.Size = New System.Drawing.Size(200, 19)
+        Me.ProdQtyNumericUpDown.TabIndex = 14
+        '
+        'lblProdRelDate
+        '
+        lblProdRelDate.AutoSize = True
+        lblProdRelDate.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblProdRelDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdRelDate.Location = New System.Drawing.Point(373, 88)
+        lblProdRelDate.Name = "lblProdRelDate"
+        lblProdRelDate.Size = New System.Drawing.Size(102, 16)
+        lblProdRelDate.TabIndex = 15
+        lblProdRelDate.Text = "Date Released:"
+        '
+        'ProdRelDateDateTimePicker
+        '
+        Me.ProdRelDateDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProductBindingSource, "ProdRelDate", True))
+        Me.ProdRelDateDateTimePicker.Location = New System.Drawing.Point(481, 85)
+        Me.ProdRelDateDateTimePicker.MaxDate = New Date(2023, 12, 31, 0, 0, 0, 0)
+        Me.ProdRelDateDateTimePicker.MinDate = New Date(1970, 1, 1, 0, 0, 0, 0)
+        Me.ProdRelDateDateTimePicker.Name = "ProdRelDateDateTimePicker"
+        Me.ProdRelDateDateTimePicker.Size = New System.Drawing.Size(200, 23)
+        Me.ProdRelDateDateTimePicker.TabIndex = 16
+        '
+        'lblProdRecDate
+        '
+        lblProdRecDate.AutoSize = True
+        lblProdRecDate.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblProdRecDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdRecDate.Location = New System.Drawing.Point(373, 118)
+        lblProdRecDate.Name = "lblProdRecDate"
+        lblProdRecDate.Size = New System.Drawing.Size(102, 16)
+        lblProdRecDate.TabIndex = 17
+        lblProdRecDate.Text = "Date Received:"
+        '
+        'ProdRecDateDateTimePicker
+        '
+        Me.ProdRecDateDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProductBindingSource, "ProdRecDate", True))
+        Me.ProdRecDateDateTimePicker.Location = New System.Drawing.Point(481, 115)
+        Me.ProdRecDateDateTimePicker.MaxDate = New Date(2023, 12, 31, 0, 0, 0, 0)
+        Me.ProdRecDateDateTimePicker.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
+        Me.ProdRecDateDateTimePicker.Name = "ProdRecDateDateTimePicker"
+        Me.ProdRecDateDateTimePicker.Size = New System.Drawing.Size(200, 23)
+        Me.ProdRecDateDateTimePicker.TabIndex = 18
+        '
+        'pnlHeader
+        '
+        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.pnlHeader.Controls.Add(Me.lblProdMan)
+        Me.pnlHeader.Location = New System.Drawing.Point(3, 4)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(804, 34)
+        Me.pnlHeader.TabIndex = 19
+        '
+        'lblProdMan
+        '
+        Me.lblProdMan.AutoSize = True
+        Me.lblProdMan.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProdMan.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblProdMan.Location = New System.Drawing.Point(4, 11)
+        Me.lblProdMan.Name = "lblProdMan"
+        Me.lblProdMan.Size = New System.Drawing.Size(179, 19)
+        Me.lblProdMan.TabIndex = 0
+        Me.lblProdMan.Text = "Product Management"
+        '
+        'PrintPreviewDialog
+        '
+        Me.PrintPreviewDialog.Document = Me.PrintDocument
+        Me.PrintPreviewDialog.UseEXDialog = True
+        '
+        'PrintDocument
+        '
+        '
+        'pnlUser
+        '
+        Me.pnlUser.Controls.Add(Me.btnBack)
+        Me.pnlUser.Controls.Add(Me.Panel1)
+        Me.pnlUser.Controls.Add(Me.dgvUser)
+        Me.pnlUser.Location = New System.Drawing.Point(0, 23)
+        Me.pnlUser.Name = "pnlUser"
+        Me.pnlUser.Size = New System.Drawing.Size(804, 551)
+        Me.pnlUser.TabIndex = 20
+        '
+        'UserBindingSource
+        '
+        Me.UserBindingSource.DataMember = "User"
+        Me.UserBindingSource.DataSource = Me.AllegroDatabaseDataSet
+        '
+        'UserTableAdapter
+        '
+        Me.UserTableAdapter.ClearBeforeFill = True
+        '
+        'dgvUser
+        '
+        Me.dgvUser.AllowUserToAddRows = False
+        Me.dgvUser.AllowUserToDeleteRows = False
+        Me.dgvUser.AllowUserToOrderColumns = True
+        Me.dgvUser.AllowUserToResizeRows = False
+        Me.dgvUser.AutoGenerateColumns = False
+        Me.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUser.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11})
+        Me.dgvUser.DataSource = Me.UserBindingSource
+        Me.dgvUser.Location = New System.Drawing.Point(220, 80)
+        Me.dgvUser.Name = "dgvUser"
+        Me.dgvUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dgvUser.Size = New System.Drawing.Size(344, 235)
+        Me.dgvUser.TabIndex = 0
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "UserId"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "UserId"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "UserName"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "UserName"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "UserPwd"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "UserPwd"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.lblUserViewer)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(804, 37)
+        Me.Panel1.TabIndex = 20
+        '
+        'lblUserViewer
+        '
+        Me.lblUserViewer.AutoSize = True
+        Me.lblUserViewer.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUserViewer.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblUserViewer.Location = New System.Drawing.Point(4, 11)
+        Me.lblUserViewer.Name = "lblUserViewer"
+        Me.lblUserViewer.Size = New System.Drawing.Size(108, 19)
+        Me.lblUserViewer.TabIndex = 0
+        Me.lblUserViewer.Text = "User Viewer"
+        '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBack.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBack.Location = New System.Drawing.Point(322, 337)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(141, 29)
+        Me.btnBack.TabIndex = 21
+        Me.btnBack.Text = "Back to Products"
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
+        'btnClose
+        '
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClose.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClose.Location = New System.Drawing.Point(343, 510)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(119, 29)
+        Me.btnClose.TabIndex = 20
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = False
+        '
         'dgvProduct
         '
-        Me.dgvProduct.AllowUserToAddRows = False
-        Me.dgvProduct.AllowUserToDeleteRows = False
-        Me.dgvProduct.AllowUserToOrderColumns = True
-        Me.dgvProduct.AllowUserToResizeRows = False
         Me.dgvProduct.AutoGenerateColumns = False
-        Me.dgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.dgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProduct.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewImageColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.dgvProduct.DataSource = Me.ProductBindingSource
-        Me.dgvProduct.Location = New System.Drawing.Point(16, 274)
+        Me.dgvProduct.Location = New System.Drawing.Point(32, 311)
         Me.dgvProduct.Name = "dgvProduct"
-        Me.dgvProduct.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgvProduct.Size = New System.Drawing.Size(741, 148)
-        Me.dgvProduct.TabIndex = 0
+        Me.dgvProduct.Size = New System.Drawing.Size(740, 193)
+        Me.dgvProduct.TabIndex = 20
         '
         'DataGridViewTextBoxColumn1
         '
@@ -298,300 +621,84 @@ Partial Class frmProduct
         Me.DataGridViewTextBoxColumn8.HeaderText = "ProdRecDate"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         '
-        'lblProdId
+        'btnDelete
         '
-        lblProdId.AutoSize = True
-        lblProdId.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblProdId.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdId.Location = New System.Drawing.Point(13, 79)
-        lblProdId.Name = "lblProdId"
-        lblProdId.Size = New System.Drawing.Size(77, 16)
-        lblProdId.TabIndex = 1
-        lblProdId.Text = "Product ID:"
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDelete.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnDelete.Location = New System.Drawing.Point(653, 221)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(119, 29)
+        Me.btnDelete.TabIndex = 21
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
         '
-        'ProdIdTextBox
+        'btnSave
         '
-        Me.ProdIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ProdIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdId", True))
-        Me.ProdIdTextBox.Location = New System.Drawing.Point(112, 76)
-        Me.ProdIdTextBox.Name = "ProdIdTextBox"
-        Me.ProdIdTextBox.Size = New System.Drawing.Size(200, 23)
-        Me.ProdIdTextBox.TabIndex = 2
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSave.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSave.Location = New System.Drawing.Point(528, 221)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(119, 29)
+        Me.btnSave.TabIndex = 22
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = False
         '
-        'lblProdName
+        'btnAdd
         '
-        lblProdName.AutoSize = True
-        lblProdName.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblProdName.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdName.Location = New System.Drawing.Point(13, 109)
-        lblProdName.Name = "lblProdName"
-        lblProdName.Size = New System.Drawing.Size(48, 16)
-        lblProdName.TabIndex = 3
-        lblProdName.Text = "Name:"
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAdd.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnAdd.Location = New System.Drawing.Point(403, 221)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(119, 29)
+        Me.btnAdd.TabIndex = 23
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
-        'ProdNameTextBox
+        'btnBackP
         '
-        Me.ProdNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ProdNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdName", True))
-        Me.ProdNameTextBox.Location = New System.Drawing.Point(112, 105)
-        Me.ProdNameTextBox.Name = "ProdNameTextBox"
-        Me.ProdNameTextBox.Size = New System.Drawing.Size(200, 23)
-        Me.ProdNameTextBox.TabIndex = 4
+        Me.btnBackP.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnBackP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnBackP.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBackP.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBackP.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBackP.Location = New System.Drawing.Point(32, 221)
+        Me.btnBackP.Name = "btnBackP"
+        Me.btnBackP.Size = New System.Drawing.Size(119, 29)
+        Me.btnBackP.TabIndex = 24
+        Me.btnBackP.Text = "Back"
+        Me.btnBackP.UseVisualStyleBackColor = False
         '
-        'ProdImgLabel
+        'btnNextP
         '
-        ProdImgLabel.AutoSize = True
-        ProdImgLabel.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ProdImgLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        ProdImgLabel.Location = New System.Drawing.Point(351, 169)
-        ProdImgLabel.Name = "ProdImgLabel"
-        ProdImgLabel.Size = New System.Drawing.Size(67, 16)
-        ProdImgLabel.TabIndex = 5
-        ProdImgLabel.Text = "Prod Img:"
-        '
-        'ProdImgPictureBox
-        '
-        Me.ProdImgPictureBox.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.ProductBindingSource, "ProdImg", True))
-        Me.ProdImgPictureBox.Location = New System.Drawing.Point(459, 182)
-        Me.ProdImgPictureBox.Name = "ProdImgPictureBox"
-        Me.ProdImgPictureBox.Size = New System.Drawing.Size(200, 50)
-        Me.ProdImgPictureBox.TabIndex = 6
-        Me.ProdImgPictureBox.TabStop = False
-        '
-        'lblProdMfr
-        '
-        lblProdMfr.AutoSize = True
-        lblProdMfr.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblProdMfr.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdMfr.Location = New System.Drawing.Point(13, 199)
-        lblProdMfr.Name = "lblProdMfr"
-        lblProdMfr.Size = New System.Drawing.Size(97, 16)
-        lblProdMfr.TabIndex = 7
-        lblProdMfr.Text = "Manufacturer:"
-        '
-        'ProdMfrComboBox
-        '
-        Me.ProdMfrComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdMfr", True))
-        Me.ProdMfrComboBox.FormattingEnabled = True
-        Me.ProdMfrComboBox.Items.AddRange(New Object() {"Moog", "Arturia", "Korg", "Roland", "Yamaha", "Ibanez", "Fender", "Rickenbacker", "Universal Audio", "Eventide", "WesAudio", "Tube-Tech"})
-        Me.ProdMfrComboBox.Location = New System.Drawing.Point(112, 193)
-        Me.ProdMfrComboBox.Name = "ProdMfrComboBox"
-        Me.ProdMfrComboBox.Size = New System.Drawing.Size(200, 24)
-        Me.ProdMfrComboBox.TabIndex = 8
-        '
-        'lblProdCtgy
-        '
-        lblProdCtgy.AutoSize = True
-        lblProdCtgy.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblProdCtgy.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdCtgy.Location = New System.Drawing.Point(13, 169)
-        lblProdCtgy.Name = "lblProdCtgy"
-        lblProdCtgy.Size = New System.Drawing.Size(69, 16)
-        lblProdCtgy.TabIndex = 9
-        lblProdCtgy.Text = "Category:"
-        '
-        'ProdCtgyComboBox
-        '
-        Me.ProdCtgyComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdCtgy", True))
-        Me.ProdCtgyComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.ProdCtgyComboBox.FormattingEnabled = True
-        Me.ProdCtgyComboBox.Items.AddRange(New Object() {"Synthesizer", "Electric Guitar", "Guitar Pedal", "Compressor", "Equalizer", "Limiter"})
-        Me.ProdCtgyComboBox.Location = New System.Drawing.Point(112, 163)
-        Me.ProdCtgyComboBox.Name = "ProdCtgyComboBox"
-        Me.ProdCtgyComboBox.Size = New System.Drawing.Size(200, 24)
-        Me.ProdCtgyComboBox.TabIndex = 10
-        '
-        'lblProdPrice
-        '
-        lblProdPrice.AutoSize = True
-        lblProdPrice.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblProdPrice.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdPrice.Location = New System.Drawing.Point(13, 139)
-        lblProdPrice.Name = "lblProdPrice"
-        lblProdPrice.Size = New System.Drawing.Size(43, 16)
-        lblProdPrice.TabIndex = 11
-        lblProdPrice.Text = "Price:"
-        '
-        'ProdPriceTextBox
-        '
-        Me.ProdPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ProdPriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdPrice", True))
-        Me.ProdPriceTextBox.Location = New System.Drawing.Point(112, 134)
-        Me.ProdPriceTextBox.Name = "ProdPriceTextBox"
-        Me.ProdPriceTextBox.Size = New System.Drawing.Size(200, 23)
-        Me.ProdPriceTextBox.TabIndex = 12
-        '
-        'lblProdQty
-        '
-        lblProdQty.AutoSize = True
-        lblProdQty.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblProdQty.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdQty.Location = New System.Drawing.Point(351, 76)
-        lblProdQty.Name = "lblProdQty"
-        lblProdQty.Size = New System.Drawing.Size(65, 16)
-        lblProdQty.TabIndex = 13
-        lblProdQty.Text = "Quantity:"
-        '
-        'ProdQtyNumericUpDown
-        '
-        Me.ProdQtyNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ProdQtyNumericUpDown.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProductBindingSource, "ProdQty", True))
-        Me.ProdQtyNumericUpDown.Location = New System.Drawing.Point(459, 77)
-        Me.ProdQtyNumericUpDown.Name = "ProdQtyNumericUpDown"
-        Me.ProdQtyNumericUpDown.Size = New System.Drawing.Size(200, 19)
-        Me.ProdQtyNumericUpDown.TabIndex = 14
-        '
-        'lblProdRelDate
-        '
-        lblProdRelDate.AutoSize = True
-        lblProdRelDate.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblProdRelDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdRelDate.Location = New System.Drawing.Point(351, 109)
-        lblProdRelDate.Name = "lblProdRelDate"
-        lblProdRelDate.Size = New System.Drawing.Size(102, 16)
-        lblProdRelDate.TabIndex = 15
-        lblProdRelDate.Text = "Date Released:"
-        '
-        'ProdRelDateDateTimePicker
-        '
-        Me.ProdRelDateDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProductBindingSource, "ProdRelDate", True))
-        Me.ProdRelDateDateTimePicker.Location = New System.Drawing.Point(459, 106)
-        Me.ProdRelDateDateTimePicker.MaxDate = New Date(2023, 12, 31, 0, 0, 0, 0)
-        Me.ProdRelDateDateTimePicker.MinDate = New Date(1970, 1, 1, 0, 0, 0, 0)
-        Me.ProdRelDateDateTimePicker.Name = "ProdRelDateDateTimePicker"
-        Me.ProdRelDateDateTimePicker.Size = New System.Drawing.Size(200, 23)
-        Me.ProdRelDateDateTimePicker.TabIndex = 16
-        '
-        'lblProdRecDate
-        '
-        lblProdRecDate.AutoSize = True
-        lblProdRecDate.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblProdRecDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdRecDate.Location = New System.Drawing.Point(351, 139)
-        lblProdRecDate.Name = "lblProdRecDate"
-        lblProdRecDate.Size = New System.Drawing.Size(102, 16)
-        lblProdRecDate.TabIndex = 17
-        lblProdRecDate.Text = "Date Received:"
-        '
-        'ProdRecDateDateTimePicker
-        '
-        Me.ProdRecDateDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProductBindingSource, "ProdRecDate", True))
-        Me.ProdRecDateDateTimePicker.Location = New System.Drawing.Point(459, 136)
-        Me.ProdRecDateDateTimePicker.MaxDate = New Date(2023, 12, 31, 0, 0, 0, 0)
-        Me.ProdRecDateDateTimePicker.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
-        Me.ProdRecDateDateTimePicker.Name = "ProdRecDateDateTimePicker"
-        Me.ProdRecDateDateTimePicker.Size = New System.Drawing.Size(200, 23)
-        Me.ProdRecDateDateTimePicker.TabIndex = 18
-        '
-        'pnlHeader
-        '
-        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.pnlHeader.Controls.Add(Me.lblProdMan)
-        Me.pnlHeader.Location = New System.Drawing.Point(0, 18)
-        Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(784, 34)
-        Me.pnlHeader.TabIndex = 19
-        '
-        'lblProdMan
-        '
-        Me.lblProdMan.AutoSize = True
-        Me.lblProdMan.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProdMan.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblProdMan.Location = New System.Drawing.Point(4, 11)
-        Me.lblProdMan.Name = "lblProdMan"
-        Me.lblProdMan.Size = New System.Drawing.Size(179, 19)
-        Me.lblProdMan.TabIndex = 0
-        Me.lblProdMan.Text = "Product Management"
-        '
-        'PrintPreviewDialog
-        '
-        Me.PrintPreviewDialog.Document = Me.PrintDocument
-        Me.PrintPreviewDialog.UseEXDialog = True
-        '
-        'PrintDocument
-        '
-        '
-        'pnlUser
-        '
-        Me.pnlUser.Controls.Add(Me.Panel1)
-        Me.pnlUser.Controls.Add(Me.dgvUser)
-        Me.pnlUser.Location = New System.Drawing.Point(0, 27)
-        Me.pnlUser.Name = "pnlUser"
-        Me.pnlUser.Size = New System.Drawing.Size(784, 435)
-        Me.pnlUser.TabIndex = 20
-        '
-        'UserBindingSource
-        '
-        Me.UserBindingSource.DataMember = "User"
-        Me.UserBindingSource.DataSource = Me.AllegroDatabaseDataSet
-        '
-        'UserTableAdapter
-        '
-        Me.UserTableAdapter.ClearBeforeFill = True
-        '
-        'dgvUser
-        '
-        Me.dgvUser.AllowUserToAddRows = False
-        Me.dgvUser.AllowUserToDeleteRows = False
-        Me.dgvUser.AllowUserToOrderColumns = True
-        Me.dgvUser.AllowUserToResizeRows = False
-        Me.dgvUser.AutoGenerateColumns = False
-        Me.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUser.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11})
-        Me.dgvUser.DataSource = Me.UserBindingSource
-        Me.dgvUser.Location = New System.Drawing.Point(214, 128)
-        Me.dgvUser.Name = "dgvUser"
-        Me.dgvUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgvUser.Size = New System.Drawing.Size(341, 159)
-        Me.dgvUser.TabIndex = 0
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "UserId"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "UserId"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "UserName"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "UserName"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "UserPwd"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "UserPwd"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.lblUserViewer)
-        Me.Panel1.Location = New System.Drawing.Point(3, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(781, 37)
-        Me.Panel1.TabIndex = 20
-        '
-        'lblUserViewer
-        '
-        Me.lblUserViewer.AutoSize = True
-        Me.lblUserViewer.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUserViewer.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblUserViewer.Location = New System.Drawing.Point(4, 11)
-        Me.lblUserViewer.Name = "lblUserViewer"
-        Me.lblUserViewer.Size = New System.Drawing.Size(108, 19)
-        Me.lblUserViewer.TabIndex = 0
-        Me.lblUserViewer.Text = "User Viewer"
+        Me.btnNextP.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnNextP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnNextP.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnNextP.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNextP.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnNextP.Location = New System.Drawing.Point(160, 221)
+        Me.btnNextP.Name = "btnNextP"
+        Me.btnNextP.Size = New System.Drawing.Size(119, 29)
+        Me.btnNextP.TabIndex = 25
+        Me.btnNextP.Text = "Next"
+        Me.btnNextP.UseVisualStyleBackColor = False
         '
         'frmProduct
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(784, 462)
-        Me.Controls.Add(Me.pnlUser)
+        Me.ClientSize = New System.Drawing.Size(804, 574)
         Me.Controls.Add(Me.pnlProducts)
+        Me.Controls.Add(Me.pnlUser)
         Me.Controls.Add(Me.mnuMain)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.mnuMain
@@ -604,7 +711,6 @@ Partial Class frmProduct
         Me.pnlProducts.PerformLayout()
         CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdImgPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProdQtyNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlHeader.ResumeLayout(False)
@@ -614,6 +720,7 @@ Partial Class frmProduct
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -643,16 +750,6 @@ Partial Class frmProduct
     Friend WithEvents ProdQtyNumericUpDown As NumericUpDown
     Friend WithEvents ProdRelDateDateTimePicker As DateTimePicker
     Friend WithEvents ProdRecDateDateTimePicker As DateTimePicker
-    Friend WithEvents dgvProduct As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents lblProdMan As Label
     Friend WithEvents PrintPreviewDialog As PrintDialog
@@ -666,4 +763,21 @@ Partial Class frmProduct
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents btnBack As Button
+    Friend WithEvents btnClose As Button
+    Friend WithEvents dgvProduct As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents btnNextP As Button
+    Friend WithEvents btnBackP As Button
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnSave As Button
+    Friend WithEvents btnDelete As Button
 End Class
