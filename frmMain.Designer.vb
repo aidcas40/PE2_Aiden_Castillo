@@ -44,6 +44,8 @@ Partial Class frmProduct
         Me.AboutDeveloperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutProgramToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlProducts = New System.Windows.Forms.Panel()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.cbxProdCtgy = New System.Windows.Forms.ComboBox()
         Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AllegroDatabaseDataSet = New Allegro.AllegroDatabaseDataSet()
@@ -89,6 +91,7 @@ Partial Class frmProduct
         Me.PrintPreviewDialog = New System.Windows.Forms.PrintDialog()
         Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
         Me.pnlUser = New System.Windows.Forms.Panel()
+        Me.lblUserViewerDesc = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblUserViewer = New System.Windows.Forms.Label()
@@ -324,6 +327,8 @@ Partial Class frmProduct
         '
         'pnlProducts
         '
+        Me.pnlProducts.Controls.Add(Me.txtSearch)
+        Me.pnlProducts.Controls.Add(Me.btnSearch)
         Me.pnlProducts.Controls.Add(lblProdCtgy)
         Me.pnlProducts.Controls.Add(Me.cbxProdCtgy)
         Me.pnlProducts.Controls.Add(lblProdMfr)
@@ -356,6 +361,32 @@ Partial Class frmProduct
         Me.pnlProducts.Name = "pnlProducts"
         Me.pnlProducts.Size = New System.Drawing.Size(807, 601)
         Me.pnlProducts.TabIndex = 1
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSearch.Font = New System.Drawing.Font("Inter", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(529, 267)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(242, 21)
+        Me.txtSearch.TabIndex = 31
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSearch.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
+        Me.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSearch.Location = New System.Drawing.Point(406, 263)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(119, 29)
+        Me.btnSearch.TabIndex = 30
+        Me.btnSearch.Text = "Search"
+        Me.ToolTip1.SetToolTip(Me.btnSearch, "Search for product")
+        Me.btnSearch.UseVisualStyleBackColor = False
         '
         'cbxProdCtgy
         '
@@ -393,7 +424,7 @@ Partial Class frmProduct
         Me.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProduct.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn12})
         Me.dgvProduct.DataSource = Me.ProductBindingSource
-        Me.dgvProduct.Location = New System.Drawing.Point(32, 290)
+        Me.dgvProduct.Location = New System.Drawing.Point(32, 302)
         Me.dgvProduct.Name = "dgvProduct"
         Me.dgvProduct.Size = New System.Drawing.Size(739, 256)
         Me.dgvProduct.TabIndex = 14
@@ -584,7 +615,7 @@ Partial Class frmProduct
         Me.btnNextP.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnNextP.Image = CType(resources.GetObject("btnNextP.Image"), System.Drawing.Image)
         Me.btnNextP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnNextP.Location = New System.Drawing.Point(157, 233)
+        Me.btnNextP.Location = New System.Drawing.Point(157, 224)
         Me.btnNextP.Name = "btnNextP"
         Me.btnNextP.Size = New System.Drawing.Size(119, 29)
         Me.btnNextP.TabIndex = 10
@@ -601,7 +632,7 @@ Partial Class frmProduct
         Me.btnBackP.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnBackP.Image = CType(resources.GetObject("btnBackP.Image"), System.Drawing.Image)
         Me.btnBackP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBackP.Location = New System.Drawing.Point(32, 233)
+        Me.btnBackP.Location = New System.Drawing.Point(32, 224)
         Me.btnBackP.Name = "btnBackP"
         Me.btnBackP.Size = New System.Drawing.Size(119, 29)
         Me.btnBackP.TabIndex = 9
@@ -618,7 +649,7 @@ Partial Class frmProduct
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"), System.Drawing.Image)
         Me.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAdd.Location = New System.Drawing.Point(406, 233)
+        Me.btnAdd.Location = New System.Drawing.Point(406, 224)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(119, 29)
         Me.btnAdd.TabIndex = 11
@@ -635,7 +666,7 @@ Partial Class frmProduct
         Me.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
         Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(529, 233)
+        Me.btnSave.Location = New System.Drawing.Point(529, 224)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(119, 29)
         Me.btnSave.TabIndex = 12
@@ -652,7 +683,7 @@ Partial Class frmProduct
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
         Me.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDelete.Location = New System.Drawing.Point(652, 233)
+        Me.btnDelete.Location = New System.Drawing.Point(652, 224)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(119, 29)
         Me.btnDelete.TabIndex = 13
@@ -668,7 +699,7 @@ Partial Class frmProduct
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnClose.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnClose.Location = New System.Drawing.Point(342, 552)
+        Me.btnClose.Location = New System.Drawing.Point(342, 565)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(119, 29)
         Me.btnClose.TabIndex = 15
@@ -766,6 +797,7 @@ Partial Class frmProduct
         '
         'pnlUser
         '
+        Me.pnlUser.Controls.Add(Me.lblUserViewerDesc)
         Me.pnlUser.Controls.Add(Me.btnBack)
         Me.pnlUser.Controls.Add(Me.Panel1)
         Me.pnlUser.Controls.Add(Me.dgvUser)
@@ -773,6 +805,16 @@ Partial Class frmProduct
         Me.pnlUser.Name = "pnlUser"
         Me.pnlUser.Size = New System.Drawing.Size(807, 601)
         Me.pnlUser.TabIndex = 20
+        '
+        'lblUserViewerDesc
+        '
+        Me.lblUserViewerDesc.AutoSize = True
+        Me.lblUserViewerDesc.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUserViewerDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblUserViewerDesc.Location = New System.Drawing.Point(276, 48)
+        Me.lblUserViewerDesc.Name = "lblUserViewerDesc"
+        Me.lblUserViewerDesc.Size = New System.Drawing.Size(0, 16)
+        Me.lblUserViewerDesc.TabIndex = 22
         '
         'btnBack
         '
@@ -782,7 +824,7 @@ Partial Class frmProduct
         Me.btnBack.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBack.Location = New System.Drawing.Point(334, 344)
+        Me.btnBack.Location = New System.Drawing.Point(334, 407)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(141, 29)
         Me.btnBack.TabIndex = 21
@@ -823,7 +865,7 @@ Partial Class frmProduct
         Me.dgvUser.Location = New System.Drawing.Point(232, 80)
         Me.dgvUser.Name = "dgvUser"
         Me.dgvUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgvUser.Size = New System.Drawing.Size(344, 235)
+        Me.dgvUser.Size = New System.Drawing.Size(344, 303)
         Me.dgvUser.TabIndex = 0
         '
         'DataGridViewTextBoxColumn9
@@ -1101,6 +1143,7 @@ Partial Class frmProduct
         Me.pnlHeader.PerformLayout()
         CType(Me.nudProdQty, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlUser.ResumeLayout(False)
+        Me.pnlUser.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1202,4 +1245,7 @@ Partial Class frmProduct
     Friend WithEvents cbxProdCtgy As ComboBox
     Friend WithEvents cbxProdMfr As ComboBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents lblUserViewerDesc As Label
 End Class

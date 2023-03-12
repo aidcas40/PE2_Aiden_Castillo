@@ -1,5 +1,7 @@
-﻿Imports System.Drawing.Print
+﻿'Imports System.Drawing.Print
 Imports System.IO
+Imports System.Data
+Imports System.Data.SqlClient
 Public Class frmProduct
     'Main Product form
     Private Sub frmProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -29,7 +31,6 @@ Public Class frmProduct
         dgvUser.Columns(0).HeaderText = "User ID"
         dgvUser.Columns(1).HeaderText = "Username"
         dgvUser.Columns(2).HeaderText = "Password"
-
     End Sub
 
     'Exit button in menu strip. Message box to confirm leaving Main form
@@ -151,7 +152,7 @@ Public Class frmProduct
         End If
     End Sub
 
-    'Saves an item to the Product Table
+    'Saves an item to the Product Table. If any fields are empty then a message box warns to field all required fields
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If String.IsNullOrEmpty(txtProdName.Text) OrElse String.IsNullOrEmpty(txtProdPrice.Text) OrElse String.IsNullOrEmpty(cbxProdCtgy.Text) OrElse String.IsNullOrEmpty(cbxProdMfr.Text) OrElse
             String.IsNullOrEmpty(nudProdQty.Text) OrElse dtpProdRelDate.Value = Nothing OrElse dtpProdRecDate.Value = Nothing OrElse String.IsNullOrEmpty(txtProdDesc.Text) Then
@@ -169,6 +170,27 @@ Public Class frmProduct
     'Goes to the next item with the Product Table
     Private Sub btnNextP_Click(sender As Object, e As EventArgs) Handles btnNextP.Click
         BindingNavigatorMoveNextItem.PerformClick()
+    End Sub
+
+    'Creating search function for Product datagridview table. Connects to the database to accomplish this
+    Private Function search1() As DataTable
+        Dim query1 As String = "SELECT * From Product"
+        query1 &= " Where ProdName Like '%' +@parm1+ '%' "
+        query1 &= " or ProdMfr Like '%' +@parm1+ '%' "
+        query1 &= " or ProdCtgy Like '%' +@parm1+ '%' Order by ProdId"
+        Dim conn As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\AllegroDatabase.mdf;Integrated Security=True")
+        Dim cmd As New SqlCommand(query1, conn)
+        cmd.Parameters.AddWithValue("parm1", txtSearch.Text.Trim)
+        Dim da As New SqlDataAdapter(cmd)
+        Dim dt As New DataTable
+        da.Fill(dt)
+        dgvProduct.DataSource = dt
+        Return dt
+    End Function
+
+    'Using search1() on a textbox. Search is active when the text in the textbox is changed/typed
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        search1()
     End Sub
 
     'Closes the entire application. Message box ask for confirmation to close application
@@ -220,5 +242,10 @@ quantity category, manufacturer, year of production, and any additional relevant
         lblAboutMe.Text = "Hello there, I'm the developer of this program. I'm officially apart of the LAAG, which 
 focuses on the development of Windows Desktop Applications. We try our best in creating a 
 user-friendly interface that enables users to easily input and access information."
+    End Sub
+
+    'Displays text for User Viewer panel when it loads
+    Private Sub pnlUser_Paint(sender As Object, e As PaintEventArgs) Handles pnlUser.Paint
+        lblUserViewerDesc.Text = " View information about users in system."
     End Sub
 End Class

@@ -227,8 +227,29 @@
         0XXzcmqN1v6TIwi+AU3v0ynyHILcAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAf5JREFUSEvFlTlLA0EUx/0ONqZQGzVgFNRCURQP/AAqNh4gqOCBoBYeoBZG8Cis
+        /ACWNprG2HqAsTQxFqZJYtx4RlKkygF57v+Bw24ycUeIGPixM/tm9rczb96m5LbUTn/N/0p8FY2krTgp
+        cXVD6dd3yqbSfE1cevg+4rJ5MqSS8OQipd8+KH58SsGhKbqvbSdvmYOvweFpip+4OR4an8+bKyNP8uzc
+        p2QoQg+dfab7uTx09VMyHOHxsrgRkwQrgMBf02oaVAiMg8hqRUKCPcYWWK0gl0B3P+fqpxwJCZKJHBiD
+        qsRdbtKWndIYEBKcGiTZGFQlODJDiQuPNAaEBEvG6UHbX91C0fUduqtqVurfOzp4PtoyhAR14LXVcTu6
+        sUv44UEqfa+tnuejLUO6ErxhdG1bvKlVn1fyHuO2DHNO9EIzBlUJjs6q5YRPl17JxqAqcdeZ2uniOtG3
+        DJVsHGBFoGeAt8pX3iCNAyEB4YkFrmDlire3UepRo9DYnDT+jUkC+Nuli1DJuTEjWAEElM3S09KmdMw3
+        eRKAbxG2DpWMQsPpwfHGFUlGDvAJih0escRKJJUA/j/Rk4lTA2E2naFM7JMS59d831fZxOPwcCtRQclv
+        iCxsCJG2upUXL4oE/CQqmgQUEhVVAow5CvQO8r2iSwBEL3sHov8nEjN2+gIdr4ro1uy+DAAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
   <metadata name="ProductBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>304, 15</value>
+  </metadata>
+  <metadata name="AllegroDatabaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>121, 17</value>
   </metadata>
   <metadata name="ProductBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>751, 56</value>
@@ -245,12 +266,6 @@
         rkJggg==
 </value>
   </data>
-  <metadata name="ProductBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>304, 15</value>
-  </metadata>
-  <metadata name="AllegroDatabaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 17</value>
-  </metadata>
   <data name="BindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -310,9 +325,6 @@
         dtINAGGiDUDGyGpoawAxeNSAQWkAORiqnRLAwAAA9EMMU8Daa3MAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
   <data name="btnNextP.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -346,9 +358,6 @@
         gg==
 </value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
   <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -373,30 +382,25 @@
   <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAQJJREFUSEtjOCes/p/WmChLXvTN+P/v56//yADEf947Hat6dEyUJSADL6qYoYhd
-        UjUHiv9EEcOFUSy5ZuX9/2ljDwYGAVLEQeYgm4thyZcTZ8GayQUg/XgtAeHnnZOhyskDIP3oZo5aghMM
-        Xkverlj//15S/v9/v35DRSAAxAeJg+SRAVmWgA2Ly/l/JyIdnPlwicEAWZaAANzQ8LT/f798/X83Nhur
-        BSBAtiUgALIIZPgldSswDeJjA4PbEpgFoCACBRcs6KgWXCALaB7xdEnCpIJRS0gCRFnytLkXqpw8ANKP
-        biaGJVdNXP//uPsAqoU0ANJ31cgFxTwQxrCE+lj9PwBZLV+uIe3YKQAAAABJRU5ErkJggg==
+        EwAACxMBAJqcGAAAAo9JREFUSEu9lstvTFEcx/0P4rGwEY+qCkLRqFYrLKSPtNigQi3UphathW5aQiy0
+        CyQsSNh4LDwjwUIshKDVzsydZ91J22i1neiYpukMiS5+5nv0TO7vnt/UDWKST878nt9zz+POzPPNLyAv
+        hApLqX/HnhywpTwJTyLR0irKBMKUuHQtB2z4pXw3vxXxL1pN0+96jYbRkt2U7vaRf3ER80swkdEzXZSx
+        ImqWmm+Rj/Qj8YX5NPAjzvzZ+s8dF/KLZPosNWKWfzPqPhomkv4Q+DW+78uN/oXZ5XrbQ9bSYpp68Ur5
+        McKGH3FnvrOPhj+JL6iKwmsrlP0nI+rRB7aGiQy3dtBMMkXfozZfZ4+gbubrJA23tOcXARM371Ksop75
+        vNJfWU8TN+4YfkNk7PxFGtjflLNxhIOrtrIcDS4k4tpGHeqdOcAQ+dTcxh7XWr5ZLYVxT2YvKOLahzrU
+        O/OAIRLfd5TGO68wX3h9pTqWsbIaZeOoYnMjG3exvPGuqxTf28h8wBDBDJO37jMfQEPMfLDxhBrdAgB1
+        0qvGELGWbaKpl6+ZTzNw4Djhg1GKow71br8hAtK9/DIBvUTxusNq6aLbqo0c903XeBJx74HeI7eQNDkg
+        iky/6abAknXqe3BlibgHeo8Qh4181DlzNKJI6t4TihTPNl1QqN5T7hyg/Nk4viMfde4cIIokLl8nu6bB
+        8M+FXXtI/ZhJMVFkpO0cDR1rNfxzMdR0kkZOnRVjosjgkWYaPd1JwRVbKPXoGU0+fs7AsuCoph4+VXHk
+        IR91Uj9RJLSmnNI9foqV16qXnvMPBIhtr6PIhp3qRYo48pAfKiozegFRBNjVDZS8/cB4Cgnk2VUHxT4g
+        r8i/5D+IFNBP+4u5J7zTyi8AAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
-  <metadata name="AllegroDatabaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 17</value>
-  </metadata>
   <metadata name="PrintPreviewDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>159, 56</value>
   </metadata>
   <metadata name="PrintDocument.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>313, 56</value>
-  </metadata>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
-  <metadata name="UserBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>447, 56</value>
   </metadata>
   <metadata name="UserBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>447, 56</value>
