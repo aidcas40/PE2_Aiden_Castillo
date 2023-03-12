@@ -20,23 +20,25 @@ Public Class frmLogin
 
         'If statements that output a message box depending on the given scenarios for the username and password input 
         If (dt.Rows.Count > 0) Then
-            MessageBox.Show("Login Success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'Message box notifies you of a successful login when both username and password inputted correctly
+            MessageBox.Show("Login success.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Hide()
             frmProduct.Show()
 
         ElseIf txtUserName.Text = "" And txtUserPwd.Text = "" Then
-
+            'If username and password is blank then message notifies you
             MessageBox.Show("Username and Password cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ElseIf txtUserName.Text = "" Then
-
+            'If only username is blank then message notifies you
             MessageBox.Show("Username cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ElseIf txtUserPwd.Text = "" Then
-
+            ''If only password is blank then message notifies you
             MessageBox.Show("Password cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else
+            'If username and/or password is inputted incorrectly the message box notifies you
             MessageBox.Show("Incorrect input", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 

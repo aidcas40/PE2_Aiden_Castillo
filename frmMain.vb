@@ -129,7 +129,12 @@ Public Class frmProduct
 
     'Saves an item to the Product Table
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        ProductBindingNavigatorSaveItem.PerformClick()
+        If String.IsNullOrEmpty(txtProdName.Text) OrElse String.IsNullOrEmpty(txtProdPrice.Text) OrElse String.IsNullOrEmpty(cbxProdCtgy.Text) OrElse String.IsNullOrEmpty(cbxProdMfr.Text) OrElse
+            String.IsNullOrEmpty(nudProdQty.Text) OrElse dtpProdRelDate.Value = Nothing OrElse dtpProdRecDate.Value = Nothing OrElse String.IsNullOrEmpty(txtProdDesc.Text) Then
+            MessageBox.Show("Please enter a value in all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ProductBindingNavigatorSaveItem.PerformClick()
+        End If
     End Sub
 
     'Goes to the previous item within the Product Table
@@ -142,7 +147,7 @@ Public Class frmProduct
         BindingNavigatorMoveNextItem.PerformClick()
     End Sub
 
-    'Closes the entire application
+    'Closes the entire application. Message box ask for confirmation to close application
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         MessageBox.Show("Are you sure you want to close the application?", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
         Application.Exit()

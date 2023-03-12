@@ -81,7 +81,7 @@ Partial Class frmProduct
         Me.pnlDeveloper = New System.Windows.Forms.Panel()
         Me.pctDeveloper = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ProdDescTextBox = New System.Windows.Forms.TextBox()
+        Me.txtProdDesc = New System.Windows.Forms.TextBox()
         Me.dgvProduct = New System.Windows.Forms.DataGridView()
         Me.pnlProgram = New System.Windows.Forms.Panel()
         Me.pctAllegro = New System.Windows.Forms.PictureBox()
@@ -299,7 +299,7 @@ Partial Class frmProduct
         Me.pnlProducts.Controls.Add(Me.cbxProdMfr)
         Me.pnlProducts.Controls.Add(Me.dgvProduct)
         Me.pnlProducts.Controls.Add(lblProdDesc)
-        Me.pnlProducts.Controls.Add(Me.ProdDescTextBox)
+        Me.pnlProducts.Controls.Add(Me.txtProdDesc)
         Me.pnlProducts.Controls.Add(Me.ProductBindingNavigator)
         Me.pnlProducts.Controls.Add(Me.btnNextP)
         Me.pnlProducts.Controls.Add(Me.btnBackP)
@@ -628,7 +628,7 @@ Partial Class frmProduct
         Me.pnlUser.Controls.Add(Me.dgvUser)
         Me.pnlUser.Location = New System.Drawing.Point(0, 23)
         Me.pnlUser.Name = "pnlUser"
-        Me.pnlUser.Size = New System.Drawing.Size(827, 601)
+        Me.pnlUser.Size = New System.Drawing.Size(847, 601)
         Me.pnlUser.TabIndex = 20
         '
         'btnBack
@@ -652,7 +652,7 @@ Partial Class frmProduct
         Me.Panel1.Controls.Add(Me.lblUserViewer)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(827, 37)
+        Me.Panel1.Size = New System.Drawing.Size(847, 37)
         Me.Panel1.TabIndex = 20
         '
         'lblUserViewer
@@ -722,15 +722,15 @@ Partial Class frmProduct
         lblProdDesc.TabIndex = 26
         lblProdDesc.Text = "Description:"
         '
-        'ProdDescTextBox
+        'txtProdDesc
         '
-        Me.ProdDescTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ProdDescTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdDesc", True))
-        Me.ProdDescTextBox.Location = New System.Drawing.Point(498, 158)
-        Me.ProdDescTextBox.MaxLength = 150
-        Me.ProdDescTextBox.Name = "ProdDescTextBox"
-        Me.ProdDescTextBox.Size = New System.Drawing.Size(200, 23)
-        Me.ProdDescTextBox.TabIndex = 8
+        Me.txtProdDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtProdDesc.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdDesc", True))
+        Me.txtProdDesc.Location = New System.Drawing.Point(498, 158)
+        Me.txtProdDesc.MaxLength = 150
+        Me.txtProdDesc.Name = "txtProdDesc"
+        Me.txtProdDesc.Size = New System.Drawing.Size(200, 23)
+        Me.txtProdDesc.TabIndex = 8
         '
         'dgvProduct
         '
@@ -933,7 +933,7 @@ Partial Class frmProduct
         Me.cbxProdMfr.Location = New System.Drawing.Point(137, 187)
         Me.cbxProdMfr.Name = "cbxProdMfr"
         Me.cbxProdMfr.Size = New System.Drawing.Size(200, 24)
-        Me.cbxProdMfr.TabIndex = 29
+        Me.cbxProdMfr.TabIndex = 4
         '
         'lblProdCtgy
         '
@@ -953,7 +953,7 @@ Partial Class frmProduct
         Me.cbxProdCtgy.Location = New System.Drawing.Point(137, 157)
         Me.cbxProdCtgy.Name = "cbxProdCtgy"
         Me.cbxProdCtgy.Size = New System.Drawing.Size(200, 24)
-        Me.cbxProdCtgy.TabIndex = 30
+        Me.cbxProdCtgy.TabIndex = 3
         '
         'ProductBindingSource
         '
@@ -1066,9 +1066,9 @@ Partial Class frmProduct
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.CancelButton = Me.btnClose
         Me.ClientSize = New System.Drawing.Size(847, 624)
-        Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProducts)
         Me.Controls.Add(Me.pnlUser)
+        Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProgram)
         Me.Controls.Add(Me.mnuMain)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1162,7 +1162,7 @@ Partial Class frmProduct
     Friend WithEvents pnlDeveloper As Panel
     Friend WithEvents pctDeveloper As PictureBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents ProdDescTextBox As TextBox
+    Friend WithEvents txtProdDesc As TextBox
     Friend WithEvents dgvProduct As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
