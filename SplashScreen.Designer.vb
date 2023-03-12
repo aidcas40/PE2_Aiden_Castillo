@@ -56,7 +56,7 @@ Partial Class frmSplashScreen
         'tmrSplashScreen
         '
         Me.tmrSplashScreen.Enabled = True
-        Me.tmrSplashScreen.Interval = 20
+        Me.tmrSplashScreen.Interval = 15
         '
         'lblLoading
         '

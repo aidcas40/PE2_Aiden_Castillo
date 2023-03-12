@@ -103,6 +103,22 @@ Partial Class frmProduct
         Me.ProductTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.ProductTableAdapter()
         Me.TableAdapterManager = New Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.UserTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.UserTableAdapter()
+        Me.pnlProgram = New System.Windows.Forms.Panel()
+        Me.pctAllegro = New System.Windows.Forms.PictureBox()
+        Me.lblAllegro = New System.Windows.Forms.Label()
+        Me.lblVersion = New System.Windows.Forms.Label()
+        Me.lblRDate = New System.Windows.Forms.Label()
+        Me.lblDescr = New System.Windows.Forms.Label()
+        Me.btnfpProducts = New System.Windows.Forms.Button()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.lblAboutMe = New System.Windows.Forms.Label()
+        Me.lblContact = New System.Windows.Forms.Label()
+        Me.lblWebsite = New System.Windows.Forms.Label()
+        Me.lblEmail = New System.Windows.Forms.Label()
+        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.lblPNumber = New System.Windows.Forms.Label()
+        Me.btnadProducts = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         lblProdId = New System.Windows.Forms.Label()
         lblProdName = New System.Windows.Forms.Label()
         lblProdPrice = New System.Windows.Forms.Label()
@@ -127,6 +143,9 @@ Partial Class frmProduct
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlProgram.SuspendLayout()
+        CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblProdId
@@ -213,6 +232,7 @@ Partial Class frmProduct
         '
         'OpenToolStripMenuItem
         '
+        Me.OpenToolStripMenuItem.Image = CType(resources.GetObject("OpenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
@@ -220,6 +240,7 @@ Partial Class frmProduct
         '
         'ExitToolStripMenuItem
         '
+        Me.ExitToolStripMenuItem.Image = CType(resources.GetObject("ExitToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
@@ -234,6 +255,7 @@ Partial Class frmProduct
         '
         'PrintToolStripMenuItem
         '
+        Me.PrintToolStripMenuItem.Image = CType(resources.GetObject("PrintToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
         Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
@@ -241,6 +263,7 @@ Partial Class frmProduct
         '
         'ClearToolStripMenuItem
         '
+        Me.ClearToolStripMenuItem.Image = CType(resources.GetObject("ClearToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
         Me.ClearToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.Delete), System.Windows.Forms.Keys)
@@ -256,6 +279,7 @@ Partial Class frmProduct
         '
         'AboutDeveloperToolStripMenuItem
         '
+        Me.AboutDeveloperToolStripMenuItem.Image = CType(resources.GetObject("AboutDeveloperToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AboutDeveloperToolStripMenuItem.Name = "AboutDeveloperToolStripMenuItem"
         Me.AboutDeveloperToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
         Me.AboutDeveloperToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
@@ -263,6 +287,7 @@ Partial Class frmProduct
         '
         'AboutProgramToolStripMenuItem
         '
+        Me.AboutProgramToolStripMenuItem.Image = CType(resources.GetObject("AboutProgramToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AboutProgramToolStripMenuItem.Name = "AboutProgramToolStripMenuItem"
         Me.AboutProgramToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.B), System.Windows.Forms.Keys)
         Me.AboutProgramToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
@@ -422,10 +447,12 @@ Partial Class frmProduct
         Me.btnNextP.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnNextP.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNextP.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnNextP.Image = CType(resources.GetObject("btnNextP.Image"), System.Drawing.Image)
+        Me.btnNextP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnNextP.Location = New System.Drawing.Point(157, 233)
         Me.btnNextP.Name = "btnNextP"
         Me.btnNextP.Size = New System.Drawing.Size(119, 29)
-        Me.btnNextP.TabIndex = 12
+        Me.btnNextP.TabIndex = 10
         Me.btnNextP.Text = "Next"
         Me.btnNextP.UseVisualStyleBackColor = False
         '
@@ -436,10 +463,12 @@ Partial Class frmProduct
         Me.btnBackP.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBackP.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBackP.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBackP.Image = CType(resources.GetObject("btnBackP.Image"), System.Drawing.Image)
+        Me.btnBackP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBackP.Location = New System.Drawing.Point(32, 233)
         Me.btnBackP.Name = "btnBackP"
         Me.btnBackP.Size = New System.Drawing.Size(119, 29)
-        Me.btnBackP.TabIndex = 11
+        Me.btnBackP.TabIndex = 9
         Me.btnBackP.Text = "Back"
         Me.btnBackP.UseVisualStyleBackColor = False
         '
@@ -450,10 +479,12 @@ Partial Class frmProduct
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAdd.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnAdd.Image = CType(resources.GetObject("btnAdd.Image"), System.Drawing.Image)
+        Me.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdd.Location = New System.Drawing.Point(406, 233)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(119, 29)
-        Me.btnAdd.TabIndex = 13
+        Me.btnAdd.TabIndex = 11
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
@@ -464,10 +495,12 @@ Partial Class frmProduct
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSave.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
+        Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSave.Location = New System.Drawing.Point(529, 233)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(119, 29)
-        Me.btnSave.TabIndex = 14
+        Me.btnSave.TabIndex = 12
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = False
         '
@@ -478,10 +511,12 @@ Partial Class frmProduct
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDelete.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
+        Me.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDelete.Location = New System.Drawing.Point(652, 233)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(119, 29)
-        Me.btnDelete.TabIndex = 15
+        Me.btnDelete.TabIndex = 13
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = False
         '
@@ -496,7 +531,7 @@ Partial Class frmProduct
         Me.btnClose.Location = New System.Drawing.Point(342, 552)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(119, 29)
-        Me.btnClose.TabIndex = 17
+        Me.btnClose.TabIndex = 15
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = False
         '
@@ -506,7 +541,7 @@ Partial Class frmProduct
         Me.pnlHeader.Controls.Add(Me.lblProdMan)
         Me.pnlHeader.Location = New System.Drawing.Point(0, 21)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(807, 34)
+        Me.pnlHeader.Size = New System.Drawing.Size(827, 34)
         Me.pnlHeader.TabIndex = 19
         '
         'lblProdMan
@@ -529,7 +564,7 @@ Partial Class frmProduct
         Me.txtProdId.Name = "txtProdId"
         Me.txtProdId.ReadOnly = True
         Me.txtProdId.Size = New System.Drawing.Size(200, 23)
-        Me.txtProdId.TabIndex = 2
+        Me.txtProdId.TabIndex = 0
         '
         'txtProdName
         '
@@ -539,7 +574,7 @@ Partial Class frmProduct
         Me.txtProdName.MaxLength = 50
         Me.txtProdName.Name = "txtProdName"
         Me.txtProdName.Size = New System.Drawing.Size(200, 23)
-        Me.txtProdName.TabIndex = 3
+        Me.txtProdName.TabIndex = 1
         '
         'txtProdPrice
         '
@@ -549,7 +584,7 @@ Partial Class frmProduct
         Me.txtProdPrice.MaxLength = 30
         Me.txtProdPrice.Name = "txtProdPrice"
         Me.txtProdPrice.Size = New System.Drawing.Size(200, 23)
-        Me.txtProdPrice.TabIndex = 4
+        Me.txtProdPrice.TabIndex = 2
         '
         'nudProdQty
         '
@@ -558,7 +593,7 @@ Partial Class frmProduct
         Me.nudProdQty.Location = New System.Drawing.Point(498, 69)
         Me.nudProdQty.Name = "nudProdQty"
         Me.nudProdQty.Size = New System.Drawing.Size(200, 19)
-        Me.nudProdQty.TabIndex = 7
+        Me.nudProdQty.TabIndex = 5
         '
         'dtpProdRelDate
         '
@@ -568,7 +603,7 @@ Partial Class frmProduct
         Me.dtpProdRelDate.MinDate = New Date(1970, 1, 1, 0, 0, 0, 0)
         Me.dtpProdRelDate.Name = "dtpProdRelDate"
         Me.dtpProdRelDate.Size = New System.Drawing.Size(200, 23)
-        Me.dtpProdRelDate.TabIndex = 8
+        Me.dtpProdRelDate.TabIndex = 6
         '
         'dtpProdRecDate
         '
@@ -578,7 +613,7 @@ Partial Class frmProduct
         Me.dtpProdRecDate.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
         Me.dtpProdRecDate.Name = "dtpProdRecDate"
         Me.dtpProdRecDate.Size = New System.Drawing.Size(200, 23)
-        Me.dtpProdRecDate.TabIndex = 9
+        Me.dtpProdRecDate.TabIndex = 7
         '
         'PrintPreviewDialog
         '
@@ -606,7 +641,7 @@ Partial Class frmProduct
         Me.btnBack.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBack.Location = New System.Drawing.Point(322, 337)
+        Me.btnBack.Location = New System.Drawing.Point(344, 337)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(141, 29)
         Me.btnBack.TabIndex = 21
@@ -643,7 +678,7 @@ Partial Class frmProduct
         Me.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvUser.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11})
         Me.dgvUser.DataSource = Me.UserBindingSource
-        Me.dgvUser.Location = New System.Drawing.Point(220, 80)
+        Me.dgvUser.Location = New System.Drawing.Point(242, 80)
         Me.dgvUser.Name = "dgvUser"
         Me.dgvUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dgvUser.Size = New System.Drawing.Size(344, 235)
@@ -651,16 +686,25 @@ Partial Class frmProduct
         '
         'pnlDeveloper
         '
+        Me.pnlDeveloper.Controls.Add(Me.PictureBox1)
+        Me.pnlDeveloper.Controls.Add(Me.btnadProducts)
+        Me.pnlDeveloper.Controls.Add(Me.lblPNumber)
+        Me.pnlDeveloper.Controls.Add(Me.lblAddress)
+        Me.pnlDeveloper.Controls.Add(Me.lblEmail)
+        Me.pnlDeveloper.Controls.Add(Me.lblWebsite)
+        Me.pnlDeveloper.Controls.Add(Me.lblContact)
+        Me.pnlDeveloper.Controls.Add(Me.lblAboutMe)
+        Me.pnlDeveloper.Controls.Add(Me.lblName)
         Me.pnlDeveloper.Controls.Add(Me.pctDeveloper)
         Me.pnlDeveloper.Location = New System.Drawing.Point(0, 23)
         Me.pnlDeveloper.Name = "pnlDeveloper"
-        Me.pnlDeveloper.Size = New System.Drawing.Size(804, 551)
+        Me.pnlDeveloper.Size = New System.Drawing.Size(827, 601)
         Me.pnlDeveloper.TabIndex = 27
         '
         'pctDeveloper
         '
         Me.pctDeveloper.Image = CType(resources.GetObject("pctDeveloper.Image"), System.Drawing.Image)
-        Me.pctDeveloper.Location = New System.Drawing.Point(323, 21)
+        Me.pctDeveloper.Location = New System.Drawing.Point(336, 17)
         Me.pctDeveloper.Name = "pctDeveloper"
         Me.pctDeveloper.Size = New System.Drawing.Size(155, 125)
         Me.pctDeveloper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -677,9 +721,9 @@ Partial Class frmProduct
         lblProdDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight
         lblProdDesc.Location = New System.Drawing.Point(376, 161)
         lblProdDesc.Name = "lblProdDesc"
-        lblProdDesc.Size = New System.Drawing.Size(116, 16)
+        lblProdDesc.Size = New System.Drawing.Size(83, 16)
         lblProdDesc.TabIndex = 26
-        lblProdDesc.Text = "Prod Description:"
+        lblProdDesc.Text = "Description:"
         '
         'ProdDescTextBox
         '
@@ -689,7 +733,7 @@ Partial Class frmProduct
         Me.ProdDescTextBox.MaxLength = 150
         Me.ProdDescTextBox.Name = "ProdDescTextBox"
         Me.ProdDescTextBox.Size = New System.Drawing.Size(200, 23)
-        Me.ProdDescTextBox.TabIndex = 10
+        Me.ProdDescTextBox.TabIndex = 8
         '
         'dgvProduct
         '
@@ -700,7 +744,7 @@ Partial Class frmProduct
         Me.dgvProduct.Location = New System.Drawing.Point(32, 290)
         Me.dgvProduct.Name = "dgvProduct"
         Me.dgvProduct.Size = New System.Drawing.Size(739, 256)
-        Me.dgvProduct.TabIndex = 16
+        Me.dgvProduct.TabIndex = 14
         '
         'lblProdMfr
         '
@@ -719,7 +763,7 @@ Partial Class frmProduct
         Me.txtProdMfr.MaxLength = 100
         Me.txtProdMfr.Name = "txtProdMfr"
         Me.txtProdMfr.Size = New System.Drawing.Size(200, 23)
-        Me.txtProdMfr.TabIndex = 28
+        Me.txtProdMfr.TabIndex = 4
         '
         'lblProdCtgy
         '
@@ -738,7 +782,7 @@ Partial Class frmProduct
         Me.txtProdCtgy.MaxLength = 100
         Me.txtProdCtgy.Name = "txtProdCtgy"
         Me.txtProdCtgy.Size = New System.Drawing.Size(200, 23)
-        Me.txtProdCtgy.TabIndex = 29
+        Me.txtProdCtgy.TabIndex = 3
         '
         'ProductBindingSource
         '
@@ -844,6 +888,188 @@ Partial Class frmProduct
         '
         Me.UserTableAdapter.ClearBeforeFill = True
         '
+        'pnlProgram
+        '
+        Me.pnlProgram.Controls.Add(Me.btnfpProducts)
+        Me.pnlProgram.Controls.Add(Me.lblDescr)
+        Me.pnlProgram.Controls.Add(Me.lblRDate)
+        Me.pnlProgram.Controls.Add(Me.lblVersion)
+        Me.pnlProgram.Controls.Add(Me.lblAllegro)
+        Me.pnlProgram.Controls.Add(Me.pctAllegro)
+        Me.pnlProgram.Location = New System.Drawing.Point(0, 23)
+        Me.pnlProgram.Name = "pnlProgram"
+        Me.pnlProgram.Size = New System.Drawing.Size(827, 601)
+        Me.pnlProgram.TabIndex = 1
+        '
+        'pctAllegro
+        '
+        Me.pctAllegro.Image = CType(resources.GetObject("pctAllegro.Image"), System.Drawing.Image)
+        Me.pctAllegro.Location = New System.Drawing.Point(338, 24)
+        Me.pctAllegro.Name = "pctAllegro"
+        Me.pctAllegro.Size = New System.Drawing.Size(151, 126)
+        Me.pctAllegro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pctAllegro.TabIndex = 0
+        Me.pctAllegro.TabStop = False
+        '
+        'lblAllegro
+        '
+        Me.lblAllegro.AutoSize = True
+        Me.lblAllegro.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAllegro.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAllegro.Location = New System.Drawing.Point(364, 145)
+        Me.lblAllegro.Name = "lblAllegro"
+        Me.lblAllegro.Size = New System.Drawing.Size(98, 29)
+        Me.lblAllegro.TabIndex = 1
+        Me.lblAllegro.Text = "Allegro"
+        '
+        'lblVersion
+        '
+        Me.lblVersion.AutoSize = True
+        Me.lblVersion.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVersion.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblVersion.Location = New System.Drawing.Point(368, 177)
+        Me.lblVersion.Name = "lblVersion"
+        Me.lblVersion.Size = New System.Drawing.Size(90, 19)
+        Me.lblVersion.TabIndex = 2
+        Me.lblVersion.Text = "Version 1.0"
+        '
+        'lblRDate
+        '
+        Me.lblRDate.AutoSize = True
+        Me.lblRDate.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblRDate.Location = New System.Drawing.Point(337, 199)
+        Me.lblRDate.Name = "lblRDate"
+        Me.lblRDate.Size = New System.Drawing.Size(152, 19)
+        Me.lblRDate.TabIndex = 3
+        Me.lblRDate.Text = "Released: 03/11/23"
+        '
+        'lblDescr
+        '
+        Me.lblDescr.AutoSize = True
+        Me.lblDescr.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescr.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblDescr.Location = New System.Drawing.Point(134, 256)
+        Me.lblDescr.Name = "lblDescr"
+        Me.lblDescr.Size = New System.Drawing.Size(0, 16)
+        Me.lblDescr.TabIndex = 4
+        '
+        'btnfpProducts
+        '
+        Me.btnfpProducts.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnfpProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnfpProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnfpProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnfpProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnfpProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnfpProducts.Location = New System.Drawing.Point(351, 372)
+        Me.btnfpProducts.Name = "btnfpProducts"
+        Me.btnfpProducts.Size = New System.Drawing.Size(141, 29)
+        Me.btnfpProducts.TabIndex = 22
+        Me.btnfpProducts.Text = "Back to Products"
+        Me.btnfpProducts.UseVisualStyleBackColor = False
+        '
+        'lblName
+        '
+        Me.lblName.AutoSize = True
+        Me.lblName.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblName.Location = New System.Drawing.Point(258, 151)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(311, 29)
+        Me.lblName.TabIndex = 2
+        Me.lblName.Text = "Developer: Aiden Castillo"
+        '
+        'lblAboutMe
+        '
+        Me.lblAboutMe.AutoSize = True
+        Me.lblAboutMe.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAboutMe.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAboutMe.Location = New System.Drawing.Point(134, 215)
+        Me.lblAboutMe.Name = "lblAboutMe"
+        Me.lblAboutMe.Size = New System.Drawing.Size(0, 16)
+        Me.lblAboutMe.TabIndex = 5
+        '
+        'lblContact
+        '
+        Me.lblContact.AutoSize = True
+        Me.lblContact.Font = New System.Drawing.Font("Inter", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContact.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblContact.Location = New System.Drawing.Point(315, 290)
+        Me.lblContact.Name = "lblContact"
+        Me.lblContact.Size = New System.Drawing.Size(196, 23)
+        Me.lblContact.TabIndex = 6
+        Me.lblContact.Text = "Contact Information"
+        '
+        'lblWebsite
+        '
+        Me.lblWebsite.AutoSize = True
+        Me.lblWebsite.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWebsite.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblWebsite.Location = New System.Drawing.Point(254, 335)
+        Me.lblWebsite.Name = "lblWebsite"
+        Me.lblWebsite.Size = New System.Drawing.Size(318, 19)
+        Me.lblWebsite.TabIndex = 7
+        Me.lblWebsite.Text = "Website: http://aidcascs210.byethost15.com"
+        '
+        'lblEmail
+        '
+        Me.lblEmail.AutoSize = True
+        Me.lblEmail.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmail.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblEmail.Location = New System.Drawing.Point(311, 376)
+        Me.lblEmail.Name = "lblEmail"
+        Me.lblEmail.Size = New System.Drawing.Size(205, 19)
+        Me.lblEmail.TabIndex = 8
+        Me.lblEmail.Text = "Email: aidcas40@cjc.edu.bz"
+        '
+        'lblAddress
+        '
+        Me.lblAddress.AutoSize = True
+        Me.lblAddress.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAddress.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAddress.Location = New System.Drawing.Point(277, 417)
+        Me.lblAddress.Name = "lblAddress"
+        Me.lblAddress.Size = New System.Drawing.Size(273, 19)
+        Me.lblAddress.TabIndex = 9
+        Me.lblAddress.Text = "Address: San Andres Village, Corozal"
+        '
+        'lblPNumber
+        '
+        Me.lblPNumber.AutoSize = True
+        Me.lblPNumber.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblPNumber.Location = New System.Drawing.Point(316, 458)
+        Me.lblPNumber.Name = "lblPNumber"
+        Me.lblPNumber.Size = New System.Drawing.Size(194, 19)
+        Me.lblPNumber.TabIndex = 10
+        Me.lblPNumber.Text = "Phone Number: 660-5057"
+        '
+        'btnadProducts
+        '
+        Me.btnadProducts.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnadProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnadProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnadProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnadProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnadProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnadProducts.Location = New System.Drawing.Point(343, 505)
+        Me.btnadProducts.Name = "btnadProducts"
+        Me.btnadProducts.Size = New System.Drawing.Size(141, 29)
+        Me.btnadProducts.TabIndex = 23
+        Me.btnadProducts.Text = "Back to Products"
+        Me.btnadProducts.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(723, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(101, 88)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 24
+        Me.PictureBox1.TabStop = False
+        '
         'frmProduct
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -851,9 +1077,10 @@ Partial Class frmProduct
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.CancelButton = Me.btnClose
         Me.ClientSize = New System.Drawing.Size(827, 624)
-        Me.Controls.Add(Me.pnlUser)
         Me.Controls.Add(Me.pnlProducts)
+        Me.Controls.Add(Me.pnlUser)
         Me.Controls.Add(Me.pnlDeveloper)
+        Me.Controls.Add(Me.pnlProgram)
         Me.Controls.Add(Me.mnuMain)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.mnuMain
@@ -875,11 +1102,16 @@ Partial Class frmProduct
         Me.Panel1.PerformLayout()
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlDeveloper.ResumeLayout(False)
+        Me.pnlDeveloper.PerformLayout()
         CType(Me.pctDeveloper, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlProgram.ResumeLayout(False)
+        Me.pnlProgram.PerformLayout()
+        CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -955,4 +1187,20 @@ Partial Class frmProduct
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents txtProdCtgy As TextBox
     Friend WithEvents txtProdMfr As TextBox
+    Friend WithEvents pnlProgram As Panel
+    Friend WithEvents lblAllegro As Label
+    Friend WithEvents pctAllegro As PictureBox
+    Friend WithEvents lblRDate As Label
+    Friend WithEvents lblVersion As Label
+    Friend WithEvents lblDescr As Label
+    Friend WithEvents btnfpProducts As Button
+    Friend WithEvents lblName As Label
+    Friend WithEvents lblAboutMe As Label
+    Friend WithEvents lblContact As Label
+    Friend WithEvents lblWebsite As Label
+    Friend WithEvents lblPNumber As Label
+    Friend WithEvents lblAddress As Label
+    Friend WithEvents lblEmail As Label
+    Friend WithEvents btnadProducts As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -1,14 +1,24 @@
-﻿Imports System.Data
+﻿'----------------------------------------------------------------------------------
+'Program Title: 		Allegro
+'Program Author: 		Aiden Castillo
+'Date Created:  		11 March, 2023
+'School:			    Corozal Junior College
+'Course Number/Name:	CS206 - Programming II
+'Program Description:	This program demonstrates various database entry functionalities and controls using MS SQL.
+'----------------------------------------------------------------------------------
+Imports System.Data
 Imports System.Data.SqlClient
 Public Class frmLogin
+    'Login Button
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
+        'Defining variables in order to connect to the database to validate user login
         Dim con As SqlConnection = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\AllegroDatabase.mdf;Integrated Security=True")
         Dim cmd As SqlCommand = New SqlCommand("select * from [User] where UserName='" + txtUserName.Text + "' and UserPwd='" + txtUserPwd.Text + "'", con)
         Dim sda As SqlDataAdapter = New SqlDataAdapter(cmd)
         Dim dt As DataTable = New DataTable()
         sda.Fill(dt)
 
+        'If statements that output a message box depending on the given scenarios for the username and password input 
         If (dt.Rows.Count > 0) Then
             MessageBox.Show("Login Success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Hide()
