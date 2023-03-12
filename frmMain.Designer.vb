@@ -29,10 +29,10 @@ Partial Class frmProduct
         Dim lblProdQty As System.Windows.Forms.Label
         Dim lblProdRelDate As System.Windows.Forms.Label
         Dim lblProdRecDate As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProduct))
         Dim lblProdDesc As System.Windows.Forms.Label
         Dim lblProdMfr As System.Windows.Forms.Label
         Dim lblProdCtgy As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProduct))
         Me.mnuMain = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,6 +44,21 @@ Partial Class frmProduct
         Me.AboutDeveloperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutProgramToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlProducts = New System.Windows.Forms.Panel()
+        Me.cbxProdCtgy = New System.Windows.Forms.ComboBox()
+        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AllegroDatabaseDataSet = New Allegro.AllegroDatabaseDataSet()
+        Me.cbxProdMfr = New System.Windows.Forms.ComboBox()
+        Me.dgvProduct = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtProdDesc = New System.Windows.Forms.TextBox()
         Me.ProductBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -78,43 +93,28 @@ Partial Class frmProduct
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblUserViewer = New System.Windows.Forms.Label()
         Me.dgvUser = New System.Windows.Forms.DataGridView()
-        Me.pnlDeveloper = New System.Windows.Forms.Panel()
-        Me.pctDeveloper = New System.Windows.Forms.PictureBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.txtProdDesc = New System.Windows.Forms.TextBox()
-        Me.dgvProduct = New System.Windows.Forms.DataGridView()
-        Me.pnlProgram = New System.Windows.Forms.Panel()
-        Me.pctAllegro = New System.Windows.Forms.PictureBox()
-        Me.lblAllegro = New System.Windows.Forms.Label()
-        Me.lblVersion = New System.Windows.Forms.Label()
-        Me.lblRDate = New System.Windows.Forms.Label()
-        Me.lblDescr = New System.Windows.Forms.Label()
-        Me.btnfpProducts = New System.Windows.Forms.Button()
-        Me.lblName = New System.Windows.Forms.Label()
-        Me.lblAboutMe = New System.Windows.Forms.Label()
-        Me.lblContact = New System.Windows.Forms.Label()
-        Me.lblWebsite = New System.Windows.Forms.Label()
-        Me.lblEmail = New System.Windows.Forms.Label()
-        Me.lblAddress = New System.Windows.Forms.Label()
-        Me.lblPNumber = New System.Windows.Forms.Label()
-        Me.btnadProducts = New System.Windows.Forms.Button()
-        Me.cbxProdMfr = New System.Windows.Forms.ComboBox()
-        Me.cbxProdCtgy = New System.Windows.Forms.ComboBox()
-        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AllegroDatabaseDataSet = New Allegro.AllegroDatabaseDataSet()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.pnlDeveloper = New System.Windows.Forms.Panel()
+        Me.btnadProducts = New System.Windows.Forms.Button()
+        Me.lblPNumber = New System.Windows.Forms.Label()
+        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.lblEmail = New System.Windows.Forms.Label()
+        Me.lblWebsite = New System.Windows.Forms.Label()
+        Me.lblContact = New System.Windows.Forms.Label()
+        Me.lblAboutMe = New System.Windows.Forms.Label()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.pctDeveloper = New System.Windows.Forms.PictureBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.pnlProgram = New System.Windows.Forms.Panel()
+        Me.btnfpProducts = New System.Windows.Forms.Button()
+        Me.lblDescr = New System.Windows.Forms.Label()
+        Me.lblRDate = New System.Windows.Forms.Label()
+        Me.lblVersion = New System.Windows.Forms.Label()
+        Me.lblAllegro = New System.Windows.Forms.Label()
+        Me.pctAllegro = New System.Windows.Forms.PictureBox()
         Me.ProductTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.ProductTableAdapter()
         Me.TableAdapterManager = New Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.UserTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.UserTableAdapter()
@@ -129,6 +129,9 @@ Partial Class frmProduct
         lblProdCtgy = New System.Windows.Forms.Label()
         Me.mnuMain.SuspendLayout()
         Me.pnlProducts.SuspendLayout()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProductBindingNavigator.SuspendLayout()
         Me.pnlHeader.SuspendLayout()
@@ -136,14 +139,11 @@ Partial Class frmProduct
         Me.pnlUser.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlDeveloper.SuspendLayout()
         CType(Me.pctDeveloper, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlProgram.SuspendLayout()
         CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblProdId
@@ -211,6 +211,36 @@ Partial Class frmProduct
         lblProdRecDate.Size = New System.Drawing.Size(102, 16)
         lblProdRecDate.TabIndex = 17
         lblProdRecDate.Text = "Date Received:"
+        '
+        'lblProdDesc
+        '
+        lblProdDesc.AutoSize = True
+        lblProdDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdDesc.Location = New System.Drawing.Point(376, 161)
+        lblProdDesc.Name = "lblProdDesc"
+        lblProdDesc.Size = New System.Drawing.Size(83, 16)
+        lblProdDesc.TabIndex = 26
+        lblProdDesc.Text = "Description:"
+        '
+        'lblProdMfr
+        '
+        lblProdMfr.AutoSize = True
+        lblProdMfr.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdMfr.Location = New System.Drawing.Point(32, 191)
+        lblProdMfr.Name = "lblProdMfr"
+        lblProdMfr.Size = New System.Drawing.Size(97, 16)
+        lblProdMfr.TabIndex = 28
+        lblProdMfr.Text = "Manufacturer:"
+        '
+        'lblProdCtgy
+        '
+        lblProdCtgy.AutoSize = True
+        lblProdCtgy.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdCtgy.Location = New System.Drawing.Point(32, 161)
+        lblProdCtgy.Name = "lblProdCtgy"
+        lblProdCtgy.Size = New System.Drawing.Size(69, 16)
+        lblProdCtgy.TabIndex = 29
+        lblProdCtgy.Text = "Category:"
         '
         'mnuMain
         '
@@ -325,6 +355,112 @@ Partial Class frmProduct
         Me.pnlProducts.Name = "pnlProducts"
         Me.pnlProducts.Size = New System.Drawing.Size(847, 601)
         Me.pnlProducts.TabIndex = 1
+        '
+        'cbxProdCtgy
+        '
+        Me.cbxProdCtgy.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdCtgy", True))
+        Me.cbxProdCtgy.FormattingEnabled = True
+        Me.cbxProdCtgy.Items.AddRange(New Object() {"Synthesizer", "Electric Guitar", "Guitar Pedal", "Compressor", "Equalizer", "Limiter", "Rever", "Delay"})
+        Me.cbxProdCtgy.Location = New System.Drawing.Point(137, 157)
+        Me.cbxProdCtgy.Name = "cbxProdCtgy"
+        Me.cbxProdCtgy.Size = New System.Drawing.Size(200, 24)
+        Me.cbxProdCtgy.TabIndex = 3
+        '
+        'ProductBindingSource
+        '
+        Me.ProductBindingSource.DataMember = "Product"
+        Me.ProductBindingSource.DataSource = Me.AllegroDatabaseDataSet
+        '
+        'AllegroDatabaseDataSet
+        '
+        Me.AllegroDatabaseDataSet.DataSetName = "AllegroDatabaseDataSet"
+        Me.AllegroDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'cbxProdMfr
+        '
+        Me.cbxProdMfr.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdMfr", True))
+        Me.cbxProdMfr.FormattingEnabled = True
+        Me.cbxProdMfr.Items.AddRange(New Object() {"Moog", "Yamaha", "Korg", "Roland", "Arturia", "Fender", "Universal Audio"})
+        Me.cbxProdMfr.Location = New System.Drawing.Point(137, 187)
+        Me.cbxProdMfr.Name = "cbxProdMfr"
+        Me.cbxProdMfr.Size = New System.Drawing.Size(200, 24)
+        Me.cbxProdMfr.TabIndex = 4
+        '
+        'dgvProduct
+        '
+        Me.dgvProduct.AutoGenerateColumns = False
+        Me.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProduct.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn12})
+        Me.dgvProduct.DataSource = Me.ProductBindingSource
+        Me.dgvProduct.Location = New System.Drawing.Point(32, 290)
+        Me.dgvProduct.Name = "dgvProduct"
+        Me.dgvProduct.Size = New System.Drawing.Size(739, 256)
+        Me.dgvProduct.TabIndex = 14
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ProdId"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ProdId"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ProdName"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "ProdName"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "ProdMfr"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "ProdMfr"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ProdCtgy"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "ProdCtgy"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ProdPrice"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "ProdPrice"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ProdQty"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "ProdQty"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "ProdRelDate"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "ProdRelDate"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ProdRecDate"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "ProdRecDate"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "ProdDesc"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "ProdDesc"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        '
+        'txtProdDesc
+        '
+        Me.txtProdDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtProdDesc.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdDesc", True))
+        Me.txtProdDesc.Location = New System.Drawing.Point(498, 158)
+        Me.txtProdDesc.MaxLength = 150
+        Me.txtProdDesc.Name = "txtProdDesc"
+        Me.txtProdDesc.Size = New System.Drawing.Size(200, 23)
+        Me.txtProdDesc.TabIndex = 8
         '
         'ProductBindingNavigator
         '
@@ -539,7 +675,7 @@ Partial Class frmProduct
         Me.pnlHeader.Controls.Add(Me.lblProdMan)
         Me.pnlHeader.Location = New System.Drawing.Point(0, 21)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(827, 34)
+        Me.pnlHeader.Size = New System.Drawing.Size(847, 34)
         Me.pnlHeader.TabIndex = 19
         '
         'lblProdMan
@@ -682,344 +818,6 @@ Partial Class frmProduct
         Me.dgvUser.Size = New System.Drawing.Size(344, 235)
         Me.dgvUser.TabIndex = 0
         '
-        'pnlDeveloper
-        '
-        Me.pnlDeveloper.Controls.Add(Me.btnadProducts)
-        Me.pnlDeveloper.Controls.Add(Me.lblPNumber)
-        Me.pnlDeveloper.Controls.Add(Me.lblAddress)
-        Me.pnlDeveloper.Controls.Add(Me.lblEmail)
-        Me.pnlDeveloper.Controls.Add(Me.lblWebsite)
-        Me.pnlDeveloper.Controls.Add(Me.lblContact)
-        Me.pnlDeveloper.Controls.Add(Me.lblAboutMe)
-        Me.pnlDeveloper.Controls.Add(Me.lblName)
-        Me.pnlDeveloper.Controls.Add(Me.pctDeveloper)
-        Me.pnlDeveloper.Location = New System.Drawing.Point(0, 23)
-        Me.pnlDeveloper.Name = "pnlDeveloper"
-        Me.pnlDeveloper.Size = New System.Drawing.Size(827, 601)
-        Me.pnlDeveloper.TabIndex = 27
-        '
-        'pctDeveloper
-        '
-        Me.pctDeveloper.Image = CType(resources.GetObject("pctDeveloper.Image"), System.Drawing.Image)
-        Me.pctDeveloper.Location = New System.Drawing.Point(336, 17)
-        Me.pctDeveloper.Name = "pctDeveloper"
-        Me.pctDeveloper.Size = New System.Drawing.Size(155, 125)
-        Me.pctDeveloper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pctDeveloper.TabIndex = 0
-        Me.pctDeveloper.TabStop = False
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'lblProdDesc
-        '
-        lblProdDesc.AutoSize = True
-        lblProdDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdDesc.Location = New System.Drawing.Point(376, 161)
-        lblProdDesc.Name = "lblProdDesc"
-        lblProdDesc.Size = New System.Drawing.Size(83, 16)
-        lblProdDesc.TabIndex = 26
-        lblProdDesc.Text = "Description:"
-        '
-        'txtProdDesc
-        '
-        Me.txtProdDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtProdDesc.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdDesc", True))
-        Me.txtProdDesc.Location = New System.Drawing.Point(498, 158)
-        Me.txtProdDesc.MaxLength = 150
-        Me.txtProdDesc.Name = "txtProdDesc"
-        Me.txtProdDesc.Size = New System.Drawing.Size(200, 23)
-        Me.txtProdDesc.TabIndex = 8
-        '
-        'dgvProduct
-        '
-        Me.dgvProduct.AutoGenerateColumns = False
-        Me.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProduct.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn12})
-        Me.dgvProduct.DataSource = Me.ProductBindingSource
-        Me.dgvProduct.Location = New System.Drawing.Point(32, 290)
-        Me.dgvProduct.Name = "dgvProduct"
-        Me.dgvProduct.Size = New System.Drawing.Size(739, 256)
-        Me.dgvProduct.TabIndex = 14
-        '
-        'pnlProgram
-        '
-        Me.pnlProgram.Controls.Add(Me.btnfpProducts)
-        Me.pnlProgram.Controls.Add(Me.lblDescr)
-        Me.pnlProgram.Controls.Add(Me.lblRDate)
-        Me.pnlProgram.Controls.Add(Me.lblVersion)
-        Me.pnlProgram.Controls.Add(Me.lblAllegro)
-        Me.pnlProgram.Controls.Add(Me.pctAllegro)
-        Me.pnlProgram.Location = New System.Drawing.Point(0, 23)
-        Me.pnlProgram.Name = "pnlProgram"
-        Me.pnlProgram.Size = New System.Drawing.Size(827, 601)
-        Me.pnlProgram.TabIndex = 1
-        '
-        'pctAllegro
-        '
-        Me.pctAllegro.Image = CType(resources.GetObject("pctAllegro.Image"), System.Drawing.Image)
-        Me.pctAllegro.Location = New System.Drawing.Point(338, 24)
-        Me.pctAllegro.Name = "pctAllegro"
-        Me.pctAllegro.Size = New System.Drawing.Size(151, 126)
-        Me.pctAllegro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pctAllegro.TabIndex = 0
-        Me.pctAllegro.TabStop = False
-        '
-        'lblAllegro
-        '
-        Me.lblAllegro.AutoSize = True
-        Me.lblAllegro.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAllegro.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAllegro.Location = New System.Drawing.Point(364, 145)
-        Me.lblAllegro.Name = "lblAllegro"
-        Me.lblAllegro.Size = New System.Drawing.Size(98, 29)
-        Me.lblAllegro.TabIndex = 1
-        Me.lblAllegro.Text = "Allegro"
-        '
-        'lblVersion
-        '
-        Me.lblVersion.AutoSize = True
-        Me.lblVersion.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVersion.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblVersion.Location = New System.Drawing.Point(368, 177)
-        Me.lblVersion.Name = "lblVersion"
-        Me.lblVersion.Size = New System.Drawing.Size(90, 19)
-        Me.lblVersion.TabIndex = 2
-        Me.lblVersion.Text = "Version 1.0"
-        '
-        'lblRDate
-        '
-        Me.lblRDate.AutoSize = True
-        Me.lblRDate.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblRDate.Location = New System.Drawing.Point(337, 199)
-        Me.lblRDate.Name = "lblRDate"
-        Me.lblRDate.Size = New System.Drawing.Size(152, 19)
-        Me.lblRDate.TabIndex = 3
-        Me.lblRDate.Text = "Released: 03/11/23"
-        '
-        'lblDescr
-        '
-        Me.lblDescr.AutoSize = True
-        Me.lblDescr.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescr.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblDescr.Location = New System.Drawing.Point(134, 256)
-        Me.lblDescr.Name = "lblDescr"
-        Me.lblDescr.Size = New System.Drawing.Size(0, 16)
-        Me.lblDescr.TabIndex = 4
-        '
-        'btnfpProducts
-        '
-        Me.btnfpProducts.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.btnfpProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnfpProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnfpProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnfpProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnfpProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnfpProducts.Location = New System.Drawing.Point(351, 372)
-        Me.btnfpProducts.Name = "btnfpProducts"
-        Me.btnfpProducts.Size = New System.Drawing.Size(141, 29)
-        Me.btnfpProducts.TabIndex = 22
-        Me.btnfpProducts.Text = "Back to Products"
-        Me.btnfpProducts.UseVisualStyleBackColor = False
-        '
-        'lblName
-        '
-        Me.lblName.AutoSize = True
-        Me.lblName.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblName.Location = New System.Drawing.Point(258, 151)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(311, 29)
-        Me.lblName.TabIndex = 2
-        Me.lblName.Text = "Developer: Aiden Castillo"
-        '
-        'lblAboutMe
-        '
-        Me.lblAboutMe.AutoSize = True
-        Me.lblAboutMe.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAboutMe.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAboutMe.Location = New System.Drawing.Point(134, 215)
-        Me.lblAboutMe.Name = "lblAboutMe"
-        Me.lblAboutMe.Size = New System.Drawing.Size(0, 16)
-        Me.lblAboutMe.TabIndex = 5
-        '
-        'lblContact
-        '
-        Me.lblContact.AutoSize = True
-        Me.lblContact.Font = New System.Drawing.Font("Inter", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContact.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblContact.Location = New System.Drawing.Point(315, 290)
-        Me.lblContact.Name = "lblContact"
-        Me.lblContact.Size = New System.Drawing.Size(196, 23)
-        Me.lblContact.TabIndex = 6
-        Me.lblContact.Text = "Contact Information"
-        '
-        'lblWebsite
-        '
-        Me.lblWebsite.AutoSize = True
-        Me.lblWebsite.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWebsite.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblWebsite.Location = New System.Drawing.Point(254, 335)
-        Me.lblWebsite.Name = "lblWebsite"
-        Me.lblWebsite.Size = New System.Drawing.Size(318, 19)
-        Me.lblWebsite.TabIndex = 7
-        Me.lblWebsite.Text = "Website: http://aidcascs210.byethost15.com"
-        '
-        'lblEmail
-        '
-        Me.lblEmail.AutoSize = True
-        Me.lblEmail.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmail.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblEmail.Location = New System.Drawing.Point(311, 376)
-        Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(205, 19)
-        Me.lblEmail.TabIndex = 8
-        Me.lblEmail.Text = "Email: aidcas40@cjc.edu.bz"
-        '
-        'lblAddress
-        '
-        Me.lblAddress.AutoSize = True
-        Me.lblAddress.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAddress.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAddress.Location = New System.Drawing.Point(277, 417)
-        Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(273, 19)
-        Me.lblAddress.TabIndex = 9
-        Me.lblAddress.Text = "Address: San Andres Village, Corozal"
-        '
-        'lblPNumber
-        '
-        Me.lblPNumber.AutoSize = True
-        Me.lblPNumber.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblPNumber.Location = New System.Drawing.Point(316, 458)
-        Me.lblPNumber.Name = "lblPNumber"
-        Me.lblPNumber.Size = New System.Drawing.Size(194, 19)
-        Me.lblPNumber.TabIndex = 10
-        Me.lblPNumber.Text = "Phone Number: 660-5057"
-        '
-        'btnadProducts
-        '
-        Me.btnadProducts.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.btnadProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnadProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnadProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnadProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnadProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnadProducts.Location = New System.Drawing.Point(343, 505)
-        Me.btnadProducts.Name = "btnadProducts"
-        Me.btnadProducts.Size = New System.Drawing.Size(141, 29)
-        Me.btnadProducts.TabIndex = 23
-        Me.btnadProducts.Text = "Back to Products"
-        Me.btnadProducts.UseVisualStyleBackColor = False
-        '
-        'lblProdMfr
-        '
-        lblProdMfr.AutoSize = True
-        lblProdMfr.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdMfr.Location = New System.Drawing.Point(32, 191)
-        lblProdMfr.Name = "lblProdMfr"
-        lblProdMfr.Size = New System.Drawing.Size(97, 16)
-        lblProdMfr.TabIndex = 28
-        lblProdMfr.Text = "Manufacturer:"
-        '
-        'cbxProdMfr
-        '
-        Me.cbxProdMfr.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdMfr", True))
-        Me.cbxProdMfr.FormattingEnabled = True
-        Me.cbxProdMfr.Items.AddRange(New Object() {"Moog", "Yamaha", "Korg", "Roland", "Arturia", "Fender", "Universal Audio"})
-        Me.cbxProdMfr.Location = New System.Drawing.Point(137, 187)
-        Me.cbxProdMfr.Name = "cbxProdMfr"
-        Me.cbxProdMfr.Size = New System.Drawing.Size(200, 24)
-        Me.cbxProdMfr.TabIndex = 4
-        '
-        'lblProdCtgy
-        '
-        lblProdCtgy.AutoSize = True
-        lblProdCtgy.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdCtgy.Location = New System.Drawing.Point(32, 161)
-        lblProdCtgy.Name = "lblProdCtgy"
-        lblProdCtgy.Size = New System.Drawing.Size(69, 16)
-        lblProdCtgy.TabIndex = 29
-        lblProdCtgy.Text = "Category:"
-        '
-        'cbxProdCtgy
-        '
-        Me.cbxProdCtgy.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdCtgy", True))
-        Me.cbxProdCtgy.FormattingEnabled = True
-        Me.cbxProdCtgy.Items.AddRange(New Object() {"Synthesizer", "Electric Guitar", "Guitar Pedal", "Compressor", "Equalizer", "Limiter", "Rever", "Delay"})
-        Me.cbxProdCtgy.Location = New System.Drawing.Point(137, 157)
-        Me.cbxProdCtgy.Name = "cbxProdCtgy"
-        Me.cbxProdCtgy.Size = New System.Drawing.Size(200, 24)
-        Me.cbxProdCtgy.TabIndex = 3
-        '
-        'ProductBindingSource
-        '
-        Me.ProductBindingSource.DataMember = "Product"
-        Me.ProductBindingSource.DataSource = Me.AllegroDatabaseDataSet
-        '
-        'AllegroDatabaseDataSet
-        '
-        Me.AllegroDatabaseDataSet.DataSetName = "AllegroDatabaseDataSet"
-        Me.AllegroDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ProdId"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ProdId"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ProdName"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ProdName"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "ProdMfr"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "ProdMfr"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ProdCtgy"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "ProdCtgy"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ProdPrice"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "ProdPrice"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ProdQty"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "ProdQty"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "ProdRelDate"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "ProdRelDate"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ProdRecDate"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "ProdRecDate"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "ProdDesc"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "ProdDesc"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        '
         'DataGridViewTextBoxColumn9
         '
         Me.DataGridViewTextBoxColumn9.DataPropertyName = "UserId"
@@ -1043,6 +841,208 @@ Partial Class frmProduct
         '
         Me.UserBindingSource.DataMember = "User"
         Me.UserBindingSource.DataSource = Me.AllegroDatabaseDataSet
+        '
+        'pnlDeveloper
+        '
+        Me.pnlDeveloper.Controls.Add(Me.btnadProducts)
+        Me.pnlDeveloper.Controls.Add(Me.lblPNumber)
+        Me.pnlDeveloper.Controls.Add(Me.lblAddress)
+        Me.pnlDeveloper.Controls.Add(Me.lblEmail)
+        Me.pnlDeveloper.Controls.Add(Me.lblWebsite)
+        Me.pnlDeveloper.Controls.Add(Me.lblContact)
+        Me.pnlDeveloper.Controls.Add(Me.lblAboutMe)
+        Me.pnlDeveloper.Controls.Add(Me.lblName)
+        Me.pnlDeveloper.Controls.Add(Me.pctDeveloper)
+        Me.pnlDeveloper.Location = New System.Drawing.Point(0, 23)
+        Me.pnlDeveloper.Name = "pnlDeveloper"
+        Me.pnlDeveloper.Size = New System.Drawing.Size(827, 601)
+        Me.pnlDeveloper.TabIndex = 27
+        '
+        'btnadProducts
+        '
+        Me.btnadProducts.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnadProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnadProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnadProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnadProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnadProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnadProducts.Location = New System.Drawing.Point(343, 505)
+        Me.btnadProducts.Name = "btnadProducts"
+        Me.btnadProducts.Size = New System.Drawing.Size(141, 29)
+        Me.btnadProducts.TabIndex = 23
+        Me.btnadProducts.Text = "Back to Products"
+        Me.btnadProducts.UseVisualStyleBackColor = False
+        '
+        'lblPNumber
+        '
+        Me.lblPNumber.AutoSize = True
+        Me.lblPNumber.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblPNumber.Location = New System.Drawing.Point(316, 458)
+        Me.lblPNumber.Name = "lblPNumber"
+        Me.lblPNumber.Size = New System.Drawing.Size(194, 19)
+        Me.lblPNumber.TabIndex = 10
+        Me.lblPNumber.Text = "Phone Number: 660-5057"
+        '
+        'lblAddress
+        '
+        Me.lblAddress.AutoSize = True
+        Me.lblAddress.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAddress.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAddress.Location = New System.Drawing.Point(277, 417)
+        Me.lblAddress.Name = "lblAddress"
+        Me.lblAddress.Size = New System.Drawing.Size(273, 19)
+        Me.lblAddress.TabIndex = 9
+        Me.lblAddress.Text = "Address: San Andres Village, Corozal"
+        '
+        'lblEmail
+        '
+        Me.lblEmail.AutoSize = True
+        Me.lblEmail.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmail.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblEmail.Location = New System.Drawing.Point(311, 376)
+        Me.lblEmail.Name = "lblEmail"
+        Me.lblEmail.Size = New System.Drawing.Size(205, 19)
+        Me.lblEmail.TabIndex = 8
+        Me.lblEmail.Text = "Email: aidcas40@cjc.edu.bz"
+        '
+        'lblWebsite
+        '
+        Me.lblWebsite.AutoSize = True
+        Me.lblWebsite.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWebsite.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblWebsite.Location = New System.Drawing.Point(254, 335)
+        Me.lblWebsite.Name = "lblWebsite"
+        Me.lblWebsite.Size = New System.Drawing.Size(318, 19)
+        Me.lblWebsite.TabIndex = 7
+        Me.lblWebsite.Text = "Website: http://aidcascs210.byethost15.com"
+        '
+        'lblContact
+        '
+        Me.lblContact.AutoSize = True
+        Me.lblContact.Font = New System.Drawing.Font("Inter", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContact.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblContact.Location = New System.Drawing.Point(315, 290)
+        Me.lblContact.Name = "lblContact"
+        Me.lblContact.Size = New System.Drawing.Size(196, 23)
+        Me.lblContact.TabIndex = 6
+        Me.lblContact.Text = "Contact Information"
+        '
+        'lblAboutMe
+        '
+        Me.lblAboutMe.AutoSize = True
+        Me.lblAboutMe.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAboutMe.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAboutMe.Location = New System.Drawing.Point(134, 215)
+        Me.lblAboutMe.Name = "lblAboutMe"
+        Me.lblAboutMe.Size = New System.Drawing.Size(0, 16)
+        Me.lblAboutMe.TabIndex = 5
+        '
+        'lblName
+        '
+        Me.lblName.AutoSize = True
+        Me.lblName.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblName.Location = New System.Drawing.Point(258, 151)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(311, 29)
+        Me.lblName.TabIndex = 2
+        Me.lblName.Text = "Developer: Aiden Castillo"
+        '
+        'pctDeveloper
+        '
+        Me.pctDeveloper.Image = CType(resources.GetObject("pctDeveloper.Image"), System.Drawing.Image)
+        Me.pctDeveloper.Location = New System.Drawing.Point(336, 17)
+        Me.pctDeveloper.Name = "pctDeveloper"
+        Me.pctDeveloper.Size = New System.Drawing.Size(155, 125)
+        Me.pctDeveloper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pctDeveloper.TabIndex = 0
+        Me.pctDeveloper.TabStop = False
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'pnlProgram
+        '
+        Me.pnlProgram.Controls.Add(Me.btnfpProducts)
+        Me.pnlProgram.Controls.Add(Me.lblDescr)
+        Me.pnlProgram.Controls.Add(Me.lblRDate)
+        Me.pnlProgram.Controls.Add(Me.lblVersion)
+        Me.pnlProgram.Controls.Add(Me.lblAllegro)
+        Me.pnlProgram.Controls.Add(Me.pctAllegro)
+        Me.pnlProgram.Location = New System.Drawing.Point(0, 23)
+        Me.pnlProgram.Name = "pnlProgram"
+        Me.pnlProgram.Size = New System.Drawing.Size(827, 601)
+        Me.pnlProgram.TabIndex = 1
+        '
+        'btnfpProducts
+        '
+        Me.btnfpProducts.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnfpProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnfpProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnfpProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnfpProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnfpProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnfpProducts.Location = New System.Drawing.Point(351, 372)
+        Me.btnfpProducts.Name = "btnfpProducts"
+        Me.btnfpProducts.Size = New System.Drawing.Size(141, 29)
+        Me.btnfpProducts.TabIndex = 22
+        Me.btnfpProducts.Text = "Back to Products"
+        Me.btnfpProducts.UseVisualStyleBackColor = False
+        '
+        'lblDescr
+        '
+        Me.lblDescr.AutoSize = True
+        Me.lblDescr.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescr.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblDescr.Location = New System.Drawing.Point(134, 256)
+        Me.lblDescr.Name = "lblDescr"
+        Me.lblDescr.Size = New System.Drawing.Size(0, 16)
+        Me.lblDescr.TabIndex = 4
+        '
+        'lblRDate
+        '
+        Me.lblRDate.AutoSize = True
+        Me.lblRDate.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblRDate.Location = New System.Drawing.Point(337, 199)
+        Me.lblRDate.Name = "lblRDate"
+        Me.lblRDate.Size = New System.Drawing.Size(152, 19)
+        Me.lblRDate.TabIndex = 3
+        Me.lblRDate.Text = "Released: 03/11/23"
+        '
+        'lblVersion
+        '
+        Me.lblVersion.AutoSize = True
+        Me.lblVersion.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVersion.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblVersion.Location = New System.Drawing.Point(368, 177)
+        Me.lblVersion.Name = "lblVersion"
+        Me.lblVersion.Size = New System.Drawing.Size(90, 19)
+        Me.lblVersion.TabIndex = 2
+        Me.lblVersion.Text = "Version 1.0"
+        '
+        'lblAllegro
+        '
+        Me.lblAllegro.AutoSize = True
+        Me.lblAllegro.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAllegro.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAllegro.Location = New System.Drawing.Point(364, 145)
+        Me.lblAllegro.Name = "lblAllegro"
+        Me.lblAllegro.Size = New System.Drawing.Size(98, 29)
+        Me.lblAllegro.TabIndex = 1
+        Me.lblAllegro.Text = "Allegro"
+        '
+        'pctAllegro
+        '
+        Me.pctAllegro.Image = CType(resources.GetObject("pctAllegro.Image"), System.Drawing.Image)
+        Me.pctAllegro.Location = New System.Drawing.Point(338, 24)
+        Me.pctAllegro.Name = "pctAllegro"
+        Me.pctAllegro.Size = New System.Drawing.Size(151, 126)
+        Me.pctAllegro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pctAllegro.TabIndex = 0
+        Me.pctAllegro.TabStop = False
         '
         'ProductTableAdapter
         '
@@ -1080,6 +1080,9 @@ Partial Class frmProduct
         Me.mnuMain.PerformLayout()
         Me.pnlProducts.ResumeLayout(False)
         Me.pnlProducts.PerformLayout()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ProductBindingNavigator.ResumeLayout(False)
         Me.ProductBindingNavigator.PerformLayout()
@@ -1090,16 +1093,13 @@ Partial Class frmProduct
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlDeveloper.ResumeLayout(False)
         Me.pnlDeveloper.PerformLayout()
         CType(Me.pctDeveloper, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlProgram.ResumeLayout(False)
         Me.pnlProgram.PerformLayout()
         CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
