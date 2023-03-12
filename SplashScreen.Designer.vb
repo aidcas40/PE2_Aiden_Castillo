@@ -49,6 +49,7 @@ Partial Class frmSplashScreen
         '
         Me.prgbrSplashScreen.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(241, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.prgbrSplashScreen.Location = New System.Drawing.Point(0, 427)
+        Me.prgbrSplashScreen.Maximum = 110
         Me.prgbrSplashScreen.Name = "prgbrSplashScreen"
         Me.prgbrSplashScreen.Size = New System.Drawing.Size(801, 27)
         Me.prgbrSplashScreen.TabIndex = 1

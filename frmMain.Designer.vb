@@ -83,8 +83,23 @@ Partial Class frmProduct
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ProdDescTextBox = New System.Windows.Forms.TextBox()
         Me.dgvProduct = New System.Windows.Forms.DataGridView()
-        Me.txtProdMfr = New System.Windows.Forms.TextBox()
-        Me.txtProdCtgy = New System.Windows.Forms.TextBox()
+        Me.pnlProgram = New System.Windows.Forms.Panel()
+        Me.pctAllegro = New System.Windows.Forms.PictureBox()
+        Me.lblAllegro = New System.Windows.Forms.Label()
+        Me.lblVersion = New System.Windows.Forms.Label()
+        Me.lblRDate = New System.Windows.Forms.Label()
+        Me.lblDescr = New System.Windows.Forms.Label()
+        Me.btnfpProducts = New System.Windows.Forms.Button()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.lblAboutMe = New System.Windows.Forms.Label()
+        Me.lblContact = New System.Windows.Forms.Label()
+        Me.lblWebsite = New System.Windows.Forms.Label()
+        Me.lblEmail = New System.Windows.Forms.Label()
+        Me.lblAddress = New System.Windows.Forms.Label()
+        Me.lblPNumber = New System.Windows.Forms.Label()
+        Me.btnadProducts = New System.Windows.Forms.Button()
+        Me.cbxProdMfr = New System.Windows.Forms.ComboBox()
+        Me.cbxProdCtgy = New System.Windows.Forms.ComboBox()
         Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AllegroDatabaseDataSet = New Allegro.AllegroDatabaseDataSet()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -103,22 +118,6 @@ Partial Class frmProduct
         Me.ProductTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.ProductTableAdapter()
         Me.TableAdapterManager = New Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.UserTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.UserTableAdapter()
-        Me.pnlProgram = New System.Windows.Forms.Panel()
-        Me.pctAllegro = New System.Windows.Forms.PictureBox()
-        Me.lblAllegro = New System.Windows.Forms.Label()
-        Me.lblVersion = New System.Windows.Forms.Label()
-        Me.lblRDate = New System.Windows.Forms.Label()
-        Me.lblDescr = New System.Windows.Forms.Label()
-        Me.btnfpProducts = New System.Windows.Forms.Button()
-        Me.lblName = New System.Windows.Forms.Label()
-        Me.lblAboutMe = New System.Windows.Forms.Label()
-        Me.lblContact = New System.Windows.Forms.Label()
-        Me.lblWebsite = New System.Windows.Forms.Label()
-        Me.lblEmail = New System.Windows.Forms.Label()
-        Me.lblAddress = New System.Windows.Forms.Label()
-        Me.lblPNumber = New System.Windows.Forms.Label()
-        Me.btnadProducts = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         lblProdId = New System.Windows.Forms.Label()
         lblProdName = New System.Windows.Forms.Label()
         lblProdPrice = New System.Windows.Forms.Label()
@@ -140,12 +139,11 @@ Partial Class frmProduct
         Me.pnlDeveloper.SuspendLayout()
         CType(Me.pctDeveloper, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlProgram.SuspendLayout()
+        CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlProgram.SuspendLayout()
-        CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblProdId
@@ -219,7 +217,7 @@ Partial Class frmProduct
         Me.mnuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.mnuMain.Location = New System.Drawing.Point(0, 0)
         Me.mnuMain.Name = "mnuMain"
-        Me.mnuMain.Size = New System.Drawing.Size(827, 24)
+        Me.mnuMain.Size = New System.Drawing.Size(847, 24)
         Me.mnuMain.TabIndex = 0
         Me.mnuMain.Text = "mnuMain"
         '
@@ -296,9 +294,9 @@ Partial Class frmProduct
         'pnlProducts
         '
         Me.pnlProducts.Controls.Add(lblProdCtgy)
-        Me.pnlProducts.Controls.Add(Me.txtProdCtgy)
+        Me.pnlProducts.Controls.Add(Me.cbxProdCtgy)
         Me.pnlProducts.Controls.Add(lblProdMfr)
-        Me.pnlProducts.Controls.Add(Me.txtProdMfr)
+        Me.pnlProducts.Controls.Add(Me.cbxProdMfr)
         Me.pnlProducts.Controls.Add(Me.dgvProduct)
         Me.pnlProducts.Controls.Add(lblProdDesc)
         Me.pnlProducts.Controls.Add(Me.ProdDescTextBox)
@@ -325,7 +323,7 @@ Partial Class frmProduct
         Me.pnlProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlProducts.Location = New System.Drawing.Point(0, 23)
         Me.pnlProducts.Name = "pnlProducts"
-        Me.pnlProducts.Size = New System.Drawing.Size(827, 601)
+        Me.pnlProducts.Size = New System.Drawing.Size(847, 601)
         Me.pnlProducts.TabIndex = 1
         '
         'ProductBindingNavigator
@@ -342,7 +340,7 @@ Partial Class frmProduct
         Me.ProductBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.ProductBindingNavigator.Name = "ProductBindingNavigator"
         Me.ProductBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ProductBindingNavigator.Size = New System.Drawing.Size(827, 25)
+        Me.ProductBindingNavigator.Size = New System.Drawing.Size(847, 25)
         Me.ProductBindingNavigator.TabIndex = 26
         Me.ProductBindingNavigator.Text = "BindingNavigator1"
         '
@@ -686,7 +684,6 @@ Partial Class frmProduct
         '
         'pnlDeveloper
         '
-        Me.pnlDeveloper.Controls.Add(Me.PictureBox1)
         Me.pnlDeveloper.Controls.Add(Me.btnadProducts)
         Me.pnlDeveloper.Controls.Add(Me.lblPNumber)
         Me.pnlDeveloper.Controls.Add(Me.lblAddress)
@@ -745,148 +742,6 @@ Partial Class frmProduct
         Me.dgvProduct.Name = "dgvProduct"
         Me.dgvProduct.Size = New System.Drawing.Size(739, 256)
         Me.dgvProduct.TabIndex = 14
-        '
-        'lblProdMfr
-        '
-        lblProdMfr.AutoSize = True
-        lblProdMfr.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdMfr.Location = New System.Drawing.Point(34, 190)
-        lblProdMfr.Name = "lblProdMfr"
-        lblProdMfr.Size = New System.Drawing.Size(93, 16)
-        lblProdMfr.TabIndex = 27
-        lblProdMfr.Text = "Manufacturer"
-        '
-        'txtProdMfr
-        '
-        Me.txtProdMfr.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdMfr", True))
-        Me.txtProdMfr.Location = New System.Drawing.Point(137, 187)
-        Me.txtProdMfr.MaxLength = 100
-        Me.txtProdMfr.Name = "txtProdMfr"
-        Me.txtProdMfr.Size = New System.Drawing.Size(200, 23)
-        Me.txtProdMfr.TabIndex = 4
-        '
-        'lblProdCtgy
-        '
-        lblProdCtgy.AutoSize = True
-        lblProdCtgy.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        lblProdCtgy.Location = New System.Drawing.Point(32, 161)
-        lblProdCtgy.Name = "lblProdCtgy"
-        lblProdCtgy.Size = New System.Drawing.Size(69, 16)
-        lblProdCtgy.TabIndex = 28
-        lblProdCtgy.Text = "Category:"
-        '
-        'txtProdCtgy
-        '
-        Me.txtProdCtgy.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdCtgy", True))
-        Me.txtProdCtgy.Location = New System.Drawing.Point(137, 158)
-        Me.txtProdCtgy.MaxLength = 100
-        Me.txtProdCtgy.Name = "txtProdCtgy"
-        Me.txtProdCtgy.Size = New System.Drawing.Size(200, 23)
-        Me.txtProdCtgy.TabIndex = 3
-        '
-        'ProductBindingSource
-        '
-        Me.ProductBindingSource.DataMember = "Product"
-        Me.ProductBindingSource.DataSource = Me.AllegroDatabaseDataSet
-        '
-        'AllegroDatabaseDataSet
-        '
-        Me.AllegroDatabaseDataSet.DataSetName = "AllegroDatabaseDataSet"
-        Me.AllegroDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ProdId"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ProdId"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ProdName"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ProdName"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "ProdMfr"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "ProdMfr"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ProdCtgy"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "ProdCtgy"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ProdPrice"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "ProdPrice"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ProdQty"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "ProdQty"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "ProdRelDate"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "ProdRelDate"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ProdRecDate"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "ProdRecDate"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "ProdDesc"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "ProdDesc"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "UserId"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "UserId"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "UserName"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "UserName"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "UserPwd"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "UserPwd"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'UserBindingSource
-        '
-        Me.UserBindingSource.DataMember = "User"
-        Me.UserBindingSource.DataSource = Me.AllegroDatabaseDataSet
-        '
-        'ProductTableAdapter
-        '
-        Me.ProductTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.ProductTableAdapter = Me.ProductTableAdapter
-        Me.TableAdapterManager.UpdateOrder = Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UserTableAdapter = Me.UserTableAdapter
-        '
-        'UserTableAdapter
-        '
-        Me.UserTableAdapter.ClearBeforeFill = True
         '
         'pnlProgram
         '
@@ -1060,15 +915,149 @@ Partial Class frmProduct
         Me.btnadProducts.Text = "Back to Products"
         Me.btnadProducts.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'lblProdMfr
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(723, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(101, 88)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 24
-        Me.PictureBox1.TabStop = False
+        lblProdMfr.AutoSize = True
+        lblProdMfr.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdMfr.Location = New System.Drawing.Point(32, 191)
+        lblProdMfr.Name = "lblProdMfr"
+        lblProdMfr.Size = New System.Drawing.Size(97, 16)
+        lblProdMfr.TabIndex = 28
+        lblProdMfr.Text = "Manufacturer:"
+        '
+        'cbxProdMfr
+        '
+        Me.cbxProdMfr.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdMfr", True))
+        Me.cbxProdMfr.FormattingEnabled = True
+        Me.cbxProdMfr.Items.AddRange(New Object() {"Moog", "Yamaha", "Korg", "Roland", "Arturia", "Fender", "Universal Audio"})
+        Me.cbxProdMfr.Location = New System.Drawing.Point(137, 187)
+        Me.cbxProdMfr.Name = "cbxProdMfr"
+        Me.cbxProdMfr.Size = New System.Drawing.Size(200, 24)
+        Me.cbxProdMfr.TabIndex = 29
+        '
+        'lblProdCtgy
+        '
+        lblProdCtgy.AutoSize = True
+        lblProdCtgy.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        lblProdCtgy.Location = New System.Drawing.Point(32, 161)
+        lblProdCtgy.Name = "lblProdCtgy"
+        lblProdCtgy.Size = New System.Drawing.Size(69, 16)
+        lblProdCtgy.TabIndex = 29
+        lblProdCtgy.Text = "Category:"
+        '
+        'cbxProdCtgy
+        '
+        Me.cbxProdCtgy.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProdCtgy", True))
+        Me.cbxProdCtgy.FormattingEnabled = True
+        Me.cbxProdCtgy.Items.AddRange(New Object() {"Synthesizer", "Electric Guitar", "Guitar Pedal", "Compressor", "Equalizer", "Limiter", "Rever", "Delay"})
+        Me.cbxProdCtgy.Location = New System.Drawing.Point(137, 157)
+        Me.cbxProdCtgy.Name = "cbxProdCtgy"
+        Me.cbxProdCtgy.Size = New System.Drawing.Size(200, 24)
+        Me.cbxProdCtgy.TabIndex = 30
+        '
+        'ProductBindingSource
+        '
+        Me.ProductBindingSource.DataMember = "Product"
+        Me.ProductBindingSource.DataSource = Me.AllegroDatabaseDataSet
+        '
+        'AllegroDatabaseDataSet
+        '
+        Me.AllegroDatabaseDataSet.DataSetName = "AllegroDatabaseDataSet"
+        Me.AllegroDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ProdId"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ProdId"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ProdName"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "ProdName"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "ProdMfr"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "ProdMfr"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ProdCtgy"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "ProdCtgy"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ProdPrice"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "ProdPrice"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ProdQty"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "ProdQty"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "ProdRelDate"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "ProdRelDate"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ProdRecDate"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "ProdRecDate"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "ProdDesc"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "ProdDesc"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "UserId"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "UserId"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "UserName"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "UserName"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "UserPwd"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "UserPwd"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'UserBindingSource
+        '
+        Me.UserBindingSource.DataMember = "User"
+        Me.UserBindingSource.DataSource = Me.AllegroDatabaseDataSet
+        '
+        'ProductTableAdapter
+        '
+        Me.ProductTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.ProductTableAdapter = Me.ProductTableAdapter
+        Me.TableAdapterManager.UpdateOrder = Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UserTableAdapter = Me.UserTableAdapter
+        '
+        'UserTableAdapter
+        '
+        Me.UserTableAdapter.ClearBeforeFill = True
         '
         'frmProduct
         '
@@ -1076,10 +1065,10 @@ Partial Class frmProduct
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.CancelButton = Me.btnClose
-        Me.ClientSize = New System.Drawing.Size(827, 624)
+        Me.ClientSize = New System.Drawing.Size(847, 624)
+        Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProducts)
         Me.Controls.Add(Me.pnlUser)
-        Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProgram)
         Me.Controls.Add(Me.mnuMain)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1105,13 +1094,12 @@ Partial Class frmProduct
         Me.pnlDeveloper.PerformLayout()
         CType(Me.pctDeveloper, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlProgram.ResumeLayout(False)
         Me.pnlProgram.PerformLayout()
         CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1185,8 +1173,6 @@ Partial Class frmProduct
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
-    Friend WithEvents txtProdCtgy As TextBox
-    Friend WithEvents txtProdMfr As TextBox
     Friend WithEvents pnlProgram As Panel
     Friend WithEvents lblAllegro As Label
     Friend WithEvents pctAllegro As PictureBox
@@ -1202,5 +1188,6 @@ Partial Class frmProduct
     Friend WithEvents lblAddress As Label
     Friend WithEvents lblEmail As Label
     Friend WithEvents btnadProducts As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents cbxProdCtgy As ComboBox
+    Friend WithEvents cbxProdMfr As ComboBox
 End Class

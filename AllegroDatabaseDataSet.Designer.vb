@@ -549,7 +549,7 @@ Partial Public Class AllegroDatabaseDataSet
             Me.columnProdId.AllowDBNull = false
             Me.columnProdId.ReadOnly = true
             Me.columnProdId.Unique = true
-            Me.columnProdName.MaxLength = 25
+            Me.columnProdName.MaxLength = 100
             Me.columnProdMfr.AllowDBNull = false
             Me.columnProdMfr.MaxLength = 100
             Me.columnProdCtgy.MaxLength = 100

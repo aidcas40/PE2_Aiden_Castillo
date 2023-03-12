@@ -99,8 +99,8 @@ Public Class frmProduct
     'Saves new items to the Products table
     Private Sub ProductBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles ProductBindingNavigatorSaveItem.Click
         Dim maxLen As Integer = 50 'Maximum length of ProdCtgy column
-        Dim selectedValue As String = txtProdCtgy.Text
-        Dim selectedValue2 As String = txtProdMfr.Text
+        Dim selectedValue As String = cbxProdCtgy.SelectedItem.ToString()
+        Dim selectedValue2 As String = cbxProdMfr.SelectedItem.ToString()
         Dim truncatedValue As String = selectedValue.Substring(0, Math.Min(selectedValue.Length, maxLen))
         Dim truncatedValue2 As String = selectedValue2.Substring(0, Math.Min(selectedValue2.Length, maxLen))
 
