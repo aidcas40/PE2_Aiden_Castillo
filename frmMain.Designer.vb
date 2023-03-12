@@ -247,7 +247,7 @@ Partial Class frmProduct
         Me.mnuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.mnuMain.Location = New System.Drawing.Point(0, 0)
         Me.mnuMain.Name = "mnuMain"
-        Me.mnuMain.Size = New System.Drawing.Size(847, 24)
+        Me.mnuMain.Size = New System.Drawing.Size(807, 24)
         Me.mnuMain.TabIndex = 0
         Me.mnuMain.Text = "mnuMain"
         '
@@ -353,7 +353,7 @@ Partial Class frmProduct
         Me.pnlProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlProducts.Location = New System.Drawing.Point(0, 23)
         Me.pnlProducts.Name = "pnlProducts"
-        Me.pnlProducts.Size = New System.Drawing.Size(847, 601)
+        Me.pnlProducts.Size = New System.Drawing.Size(807, 601)
         Me.pnlProducts.TabIndex = 1
         '
         'cbxProdCtgy
@@ -476,7 +476,7 @@ Partial Class frmProduct
         Me.ProductBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.ProductBindingNavigator.Name = "ProductBindingNavigator"
         Me.ProductBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ProductBindingNavigator.Size = New System.Drawing.Size(847, 25)
+        Me.ProductBindingNavigator.Size = New System.Drawing.Size(807, 25)
         Me.ProductBindingNavigator.TabIndex = 26
         Me.ProductBindingNavigator.Text = "BindingNavigator1"
         '
@@ -675,7 +675,7 @@ Partial Class frmProduct
         Me.pnlHeader.Controls.Add(Me.lblProdMan)
         Me.pnlHeader.Location = New System.Drawing.Point(0, 21)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(847, 34)
+        Me.pnlHeader.Size = New System.Drawing.Size(807, 34)
         Me.pnlHeader.TabIndex = 19
         '
         'lblProdMan
@@ -764,7 +764,7 @@ Partial Class frmProduct
         Me.pnlUser.Controls.Add(Me.dgvUser)
         Me.pnlUser.Location = New System.Drawing.Point(0, 23)
         Me.pnlUser.Name = "pnlUser"
-        Me.pnlUser.Size = New System.Drawing.Size(847, 601)
+        Me.pnlUser.Size = New System.Drawing.Size(807, 601)
         Me.pnlUser.TabIndex = 20
         '
         'btnBack
@@ -775,7 +775,7 @@ Partial Class frmProduct
         Me.btnBack.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBack.Location = New System.Drawing.Point(344, 337)
+        Me.btnBack.Location = New System.Drawing.Point(334, 344)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(141, 29)
         Me.btnBack.TabIndex = 21
@@ -788,7 +788,7 @@ Partial Class frmProduct
         Me.Panel1.Controls.Add(Me.lblUserViewer)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(847, 37)
+        Me.Panel1.Size = New System.Drawing.Size(807, 37)
         Me.Panel1.TabIndex = 20
         '
         'lblUserViewer
@@ -812,7 +812,7 @@ Partial Class frmProduct
         Me.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvUser.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11})
         Me.dgvUser.DataSource = Me.UserBindingSource
-        Me.dgvUser.Location = New System.Drawing.Point(242, 80)
+        Me.dgvUser.Location = New System.Drawing.Point(232, 80)
         Me.dgvUser.Name = "dgvUser"
         Me.dgvUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dgvUser.Size = New System.Drawing.Size(344, 235)
@@ -855,7 +855,7 @@ Partial Class frmProduct
         Me.pnlDeveloper.Controls.Add(Me.pctDeveloper)
         Me.pnlDeveloper.Location = New System.Drawing.Point(0, 23)
         Me.pnlDeveloper.Name = "pnlDeveloper"
-        Me.pnlDeveloper.Size = New System.Drawing.Size(827, 601)
+        Me.pnlDeveloper.Size = New System.Drawing.Size(807, 601)
         Me.pnlDeveloper.TabIndex = 27
         '
         'btnadProducts
@@ -866,7 +866,7 @@ Partial Class frmProduct
         Me.btnadProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnadProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnadProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnadProducts.Location = New System.Drawing.Point(343, 505)
+        Me.btnadProducts.Location = New System.Drawing.Point(333, 505)
         Me.btnadProducts.Name = "btnadProducts"
         Me.btnadProducts.Size = New System.Drawing.Size(141, 29)
         Me.btnadProducts.TabIndex = 23
@@ -878,7 +878,7 @@ Partial Class frmProduct
         Me.lblPNumber.AutoSize = True
         Me.lblPNumber.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblPNumber.Location = New System.Drawing.Point(316, 458)
+        Me.lblPNumber.Location = New System.Drawing.Point(306, 458)
         Me.lblPNumber.Name = "lblPNumber"
         Me.lblPNumber.Size = New System.Drawing.Size(194, 19)
         Me.lblPNumber.TabIndex = 10
@@ -889,7 +889,7 @@ Partial Class frmProduct
         Me.lblAddress.AutoSize = True
         Me.lblAddress.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAddress.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAddress.Location = New System.Drawing.Point(277, 417)
+        Me.lblAddress.Location = New System.Drawing.Point(267, 417)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(273, 19)
         Me.lblAddress.TabIndex = 9
@@ -900,7 +900,7 @@ Partial Class frmProduct
         Me.lblEmail.AutoSize = True
         Me.lblEmail.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmail.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblEmail.Location = New System.Drawing.Point(311, 376)
+        Me.lblEmail.Location = New System.Drawing.Point(301, 376)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(205, 19)
         Me.lblEmail.TabIndex = 8
@@ -911,7 +911,7 @@ Partial Class frmProduct
         Me.lblWebsite.AutoSize = True
         Me.lblWebsite.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWebsite.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblWebsite.Location = New System.Drawing.Point(254, 335)
+        Me.lblWebsite.Location = New System.Drawing.Point(244, 335)
         Me.lblWebsite.Name = "lblWebsite"
         Me.lblWebsite.Size = New System.Drawing.Size(318, 19)
         Me.lblWebsite.TabIndex = 7
@@ -922,7 +922,7 @@ Partial Class frmProduct
         Me.lblContact.AutoSize = True
         Me.lblContact.Font = New System.Drawing.Font("Inter", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblContact.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblContact.Location = New System.Drawing.Point(315, 290)
+        Me.lblContact.Location = New System.Drawing.Point(305, 290)
         Me.lblContact.Name = "lblContact"
         Me.lblContact.Size = New System.Drawing.Size(196, 23)
         Me.lblContact.TabIndex = 6
@@ -943,7 +943,7 @@ Partial Class frmProduct
         Me.lblName.AutoSize = True
         Me.lblName.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblName.Location = New System.Drawing.Point(258, 151)
+        Me.lblName.Location = New System.Drawing.Point(248, 151)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(311, 29)
         Me.lblName.TabIndex = 2
@@ -952,7 +952,7 @@ Partial Class frmProduct
         'pctDeveloper
         '
         Me.pctDeveloper.Image = CType(resources.GetObject("pctDeveloper.Image"), System.Drawing.Image)
-        Me.pctDeveloper.Location = New System.Drawing.Point(336, 17)
+        Me.pctDeveloper.Location = New System.Drawing.Point(326, 17)
         Me.pctDeveloper.Name = "pctDeveloper"
         Me.pctDeveloper.Size = New System.Drawing.Size(155, 125)
         Me.pctDeveloper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -973,7 +973,7 @@ Partial Class frmProduct
         Me.pnlProgram.Controls.Add(Me.pctAllegro)
         Me.pnlProgram.Location = New System.Drawing.Point(0, 23)
         Me.pnlProgram.Name = "pnlProgram"
-        Me.pnlProgram.Size = New System.Drawing.Size(827, 601)
+        Me.pnlProgram.Size = New System.Drawing.Size(807, 601)
         Me.pnlProgram.TabIndex = 1
         '
         'btnfpProducts
@@ -984,7 +984,7 @@ Partial Class frmProduct
         Me.btnfpProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnfpProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnfpProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnfpProducts.Location = New System.Drawing.Point(351, 372)
+        Me.btnfpProducts.Location = New System.Drawing.Point(333, 372)
         Me.btnfpProducts.Name = "btnfpProducts"
         Me.btnfpProducts.Size = New System.Drawing.Size(141, 29)
         Me.btnfpProducts.TabIndex = 22
@@ -1006,7 +1006,7 @@ Partial Class frmProduct
         Me.lblRDate.AutoSize = True
         Me.lblRDate.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblRDate.Location = New System.Drawing.Point(337, 199)
+        Me.lblRDate.Location = New System.Drawing.Point(327, 198)
         Me.lblRDate.Name = "lblRDate"
         Me.lblRDate.Size = New System.Drawing.Size(152, 19)
         Me.lblRDate.TabIndex = 3
@@ -1017,7 +1017,7 @@ Partial Class frmProduct
         Me.lblVersion.AutoSize = True
         Me.lblVersion.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVersion.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblVersion.Location = New System.Drawing.Point(368, 177)
+        Me.lblVersion.Location = New System.Drawing.Point(358, 179)
         Me.lblVersion.Name = "lblVersion"
         Me.lblVersion.Size = New System.Drawing.Size(90, 19)
         Me.lblVersion.TabIndex = 2
@@ -1028,7 +1028,7 @@ Partial Class frmProduct
         Me.lblAllegro.AutoSize = True
         Me.lblAllegro.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAllegro.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAllegro.Location = New System.Drawing.Point(364, 145)
+        Me.lblAllegro.Location = New System.Drawing.Point(354, 150)
         Me.lblAllegro.Name = "lblAllegro"
         Me.lblAllegro.Size = New System.Drawing.Size(98, 29)
         Me.lblAllegro.TabIndex = 1
@@ -1037,7 +1037,7 @@ Partial Class frmProduct
         'pctAllegro
         '
         Me.pctAllegro.Image = CType(resources.GetObject("pctAllegro.Image"), System.Drawing.Image)
-        Me.pctAllegro.Location = New System.Drawing.Point(338, 24)
+        Me.pctAllegro.Location = New System.Drawing.Point(328, 24)
         Me.pctAllegro.Name = "pctAllegro"
         Me.pctAllegro.Size = New System.Drawing.Size(151, 126)
         Me.pctAllegro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1065,9 +1065,9 @@ Partial Class frmProduct
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.CancelButton = Me.btnClose
-        Me.ClientSize = New System.Drawing.Size(847, 624)
-        Me.Controls.Add(Me.pnlProducts)
+        Me.ClientSize = New System.Drawing.Size(807, 624)
         Me.Controls.Add(Me.pnlUser)
+        Me.Controls.Add(Me.pnlProducts)
         Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProgram)
         Me.Controls.Add(Me.mnuMain)

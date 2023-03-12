@@ -25,13 +25,22 @@ Public Class frmProduct
         dgvProduct.Columns(7).HeaderText = "Date Received"
         dgvProduct.Columns(8).HeaderText = "Description"
 
+        'Changing text in header columns
+        dgvUser.Columns(0).HeaderText = "User ID"
+        dgvUser.Columns(1).HeaderText = "Username"
+        dgvUser.Columns(2).HeaderText = "Password"
+
     End Sub
 
     'Exit button in menu strip. Message box to confirm leaving Main form
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-        Me.Close()
-        frmLogin.Show()
+        Dim msgExit = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If msgExit = Windows.Forms.DialogResult.Yes Then
+            Me.Close()
+            frmLogin.Show()
+        Else
+            Exit Sub
+        End If
     End Sub
 
     'Prints menu strip dialog setup
@@ -96,6 +105,15 @@ Public Class frmProduct
         pnlProgram.Visible = False
     End Sub
 
+    'Replaces the displayed data on the datagridview user password column with *
+    Private Sub dgvUser_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvUser.CellFormatting
+        If e.ColumnIndex = 2 Then
+            If e.Value IsNot Nothing Then
+                e.Value = New String("*", e.Value.ToString().Length)
+            End If
+        End If
+    End Sub
+
     'Saves new items to the Products table
     Private Sub ProductBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles ProductBindingNavigatorSaveItem.Click
         Dim maxLen As Integer = 50 'Maximum length of ProdCtgy column
@@ -124,7 +142,13 @@ Public Class frmProduct
 
     'Deletes an item from the Product Table
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        BindingNavigatorDeleteItem.PerformClick()
+        'Messae Box to confirm deletion of an item from the database
+        Dim msgDelete = MessageBox.Show("Are you sure you want to delete this item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If msgDelete = Windows.Forms.DialogResult.Yes Then
+            BindingNavigatorDeleteItem.PerformClick()
+        Else
+            Exit Sub
+        End If
     End Sub
 
     'Saves an item to the Product Table
@@ -149,8 +173,12 @@ Public Class frmProduct
 
     'Closes the entire application. Message box ask for confirmation to close application
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        MessageBox.Show("Are you sure you want to close the application?", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-        Application.Exit()
+        Dim msgClose = MessageBox.Show("Are you sure you want to close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If msgClose = Windows.Forms.DialogResult.Yes Then
+            Application.Exit()
+        Else
+            Exit Sub
+        End If
     End Sub
 
     'For loop that clears the various inputs for Products
