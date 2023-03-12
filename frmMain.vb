@@ -14,13 +14,13 @@ Public Class frmProduct
 
         dgvProduct.Columns(0).HeaderText = "Product ID"
         dgvProduct.Columns(1).HeaderText = "Name"
-        dgvProduct.Columns(2).HeaderText = "Product Image"
-        dgvProduct.Columns(3).HeaderText = "Manufacturer"
-        dgvProduct.Columns(4).HeaderText = "Category"
-        dgvProduct.Columns(5).HeaderText = "Price"
-        dgvProduct.Columns(6).HeaderText = "Quantity"
-        dgvProduct.Columns(7).HeaderText = "Date Released"
-        dgvProduct.Columns(8).HeaderText = "Date Received"
+        dgvProduct.Columns(2).HeaderText = "Manufacturer"
+        dgvProduct.Columns(3).HeaderText = "Category"
+        dgvProduct.Columns(4).HeaderText = "Price"
+        dgvProduct.Columns(5).HeaderText = "Quantity"
+        dgvProduct.Columns(6).HeaderText = "Date Released"
+        dgvProduct.Columns(7).HeaderText = "Date Received"
+        dgvProduct.Columns(8).HeaderText = "Description"
 
     End Sub
 
@@ -54,14 +54,18 @@ Public Class frmProduct
         pnlDeveloper.Visible = True
     End Sub
     Private Sub ProductBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles ProductBindingNavigatorSaveItem.Click
-        Dim maxLen As Integer = 50 'Assuming maximum length of ProdCtgy column is 50
-        Dim selectedValue As String = cbxProdCtgy.SelectedItem.ToString()
+        Dim maxLen As Integer = 50 'Maximum length of ProdCtgy column
+        Dim selectedValue As String = txtProdCtgy.Text
+        Dim selectedValue2 As String = txtProdMfr.Text
         Dim truncatedValue As String = selectedValue.Substring(0, Math.Min(selectedValue.Length, maxLen))
+        Dim truncatedValue2 As String = selectedValue2.Substring(0, Math.Min(selectedValue2.Length, maxLen))
+
         'Now set the truncated value for the ProdCtgy column
         Dim dr As DataRow = AllegroDatabaseDataSet.Tables("Product").NewRow()
         dr("ProdCtgy") = truncatedValue
+        dr("ProdMfr") = truncatedValue2
         ' Set other column values...
-        AllegroDatabaseDataSet.Tables("Product").Rows.Add(dr)
+        'AllegroDatabaseDataSet.Tables("Product").Rows.Add(dr)
 
         Me.Validate()
         Me.ProductBindingSource.EndEdit()

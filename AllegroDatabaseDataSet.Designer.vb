@@ -322,8 +322,6 @@ Partial Public Class AllegroDatabaseDataSet
         
         Private columnProdName As Global.System.Data.DataColumn
         
-        Private columnProdImg As Global.System.Data.DataColumn
-        
         Private columnProdMfr As Global.System.Data.DataColumn
         
         Private columnProdCtgy As Global.System.Data.DataColumn
@@ -335,6 +333,8 @@ Partial Public Class AllegroDatabaseDataSet
         Private columnProdRelDate As Global.System.Data.DataColumn
         
         Private columnProdRecDate As Global.System.Data.DataColumn
+        
+        Private columnProdDesc As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -389,14 +389,6 @@ Partial Public Class AllegroDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property ProdImgColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnProdImg
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property ProdMfrColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnProdMfr
@@ -444,6 +436,14 @@ Partial Public Class AllegroDatabaseDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property ProdDescColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProdDesc
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -480,9 +480,9 @@ Partial Public Class AllegroDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddProductRow(ByVal ProdName As String, ByVal ProdImg() As Byte, ByVal ProdMfr As String, ByVal ProdCtgy As String, ByVal ProdPrice As Decimal, ByVal ProdQty As Integer, ByVal ProdRelDate As Date, ByVal ProdRecDate As Date) As ProductRow
+        Public Overloads Function AddProductRow(ByVal ProdName As String, ByVal ProdMfr As String, ByVal ProdCtgy As String, ByVal ProdPrice As Decimal, ByVal ProdQty As Integer, ByVal ProdRelDate As Date, ByVal ProdRecDate As Date, ByVal ProdDesc As String) As ProductRow
             Dim rowProductRow As ProductRow = CType(Me.NewRow,ProductRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, ProdName, ProdImg, ProdMfr, ProdCtgy, ProdPrice, ProdQty, ProdRelDate, ProdRecDate}
+            Dim columnValuesArray() As Object = New Object() {Nothing, ProdName, ProdMfr, ProdCtgy, ProdPrice, ProdQty, ProdRelDate, ProdRecDate, ProdDesc}
             rowProductRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowProductRow)
             Return rowProductRow
@@ -513,13 +513,13 @@ Partial Public Class AllegroDatabaseDataSet
         Friend Sub InitVars()
             Me.columnProdId = MyBase.Columns("ProdId")
             Me.columnProdName = MyBase.Columns("ProdName")
-            Me.columnProdImg = MyBase.Columns("ProdImg")
             Me.columnProdMfr = MyBase.Columns("ProdMfr")
             Me.columnProdCtgy = MyBase.Columns("ProdCtgy")
             Me.columnProdPrice = MyBase.Columns("ProdPrice")
             Me.columnProdQty = MyBase.Columns("ProdQty")
             Me.columnProdRelDate = MyBase.Columns("ProdRelDate")
             Me.columnProdRecDate = MyBase.Columns("ProdRecDate")
+            Me.columnProdDesc = MyBase.Columns("ProdDesc")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -529,8 +529,6 @@ Partial Public Class AllegroDatabaseDataSet
             MyBase.Columns.Add(Me.columnProdId)
             Me.columnProdName = New Global.System.Data.DataColumn("ProdName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnProdName)
-            Me.columnProdImg = New Global.System.Data.DataColumn("ProdImg", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnProdImg)
             Me.columnProdMfr = New Global.System.Data.DataColumn("ProdMfr", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnProdMfr)
             Me.columnProdCtgy = New Global.System.Data.DataColumn("ProdCtgy", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -543,6 +541,8 @@ Partial Public Class AllegroDatabaseDataSet
             MyBase.Columns.Add(Me.columnProdRelDate)
             Me.columnProdRecDate = New Global.System.Data.DataColumn("ProdRecDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnProdRecDate)
+            Me.columnProdDesc = New Global.System.Data.DataColumn("ProdDesc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProdDesc)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnProdId}, true))
             Me.columnProdId.AutoIncrement = true
             Me.columnProdId.AutoIncrementSeed = 1
@@ -550,12 +550,12 @@ Partial Public Class AllegroDatabaseDataSet
             Me.columnProdId.ReadOnly = true
             Me.columnProdId.Unique = true
             Me.columnProdName.MaxLength = 25
-            Me.columnProdImg.AllowDBNull = false
             Me.columnProdMfr.AllowDBNull = false
-            Me.columnProdMfr.MaxLength = 10
-            Me.columnProdCtgy.MaxLength = 10
+            Me.columnProdMfr.MaxLength = 100
+            Me.columnProdCtgy.MaxLength = 100
             Me.columnProdRelDate.AllowDBNull = false
             Me.columnProdRecDate.AllowDBNull = false
+            Me.columnProdDesc.MaxLength = 100
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1022,17 +1022,6 @@ Partial Public Class AllegroDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ProdImg() As Byte()
-            Get
-                Return CType(Me(Me.tableProduct.ProdImgColumn),Byte())
-            End Get
-            Set
-                Me(Me.tableProduct.ProdImgColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property ProdMfr() As String
             Get
                 Return CType(Me(Me.tableProduct.ProdMfrColumn),String)
@@ -1111,6 +1100,21 @@ Partial Public Class AllegroDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property ProdDesc() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableProduct.ProdDescColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ProdDesc' in table 'Product' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableProduct.ProdDescColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsProdNameNull() As Boolean
             Return Me.IsNull(Me.tableProduct.ProdNameColumn)
         End Function
@@ -1155,6 +1159,18 @@ Partial Public Class AllegroDatabaseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetProdQtyNull()
             Me(Me.tableProduct.ProdQtyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsProdDescNull() As Boolean
+            Return Me.IsNull(Me.tableProduct.ProdDescColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetProdDescNull()
+            Me(Me.tableProduct.ProdDescColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1411,87 +1427,103 @@ Namespace AllegroDatabaseDataSetTableAdapters
             tableMapping.DataSetTable = "Product"
             tableMapping.ColumnMappings.Add("ProdId", "ProdId")
             tableMapping.ColumnMappings.Add("ProdName", "ProdName")
-            tableMapping.ColumnMappings.Add("ProdImg", "ProdImg")
             tableMapping.ColumnMappings.Add("ProdMfr", "ProdMfr")
             tableMapping.ColumnMappings.Add("ProdCtgy", "ProdCtgy")
             tableMapping.ColumnMappings.Add("ProdPrice", "ProdPrice")
             tableMapping.ColumnMappings.Add("ProdQty", "ProdQty")
             tableMapping.ColumnMappings.Add("ProdRelDate", "ProdRelDate")
             tableMapping.ColumnMappings.Add("ProdRecDate", "ProdRecDate")
+            tableMapping.ColumnMappings.Add("ProdDesc", "ProdDesc")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Product] WHERE (([ProdId] = @Original_ProdId) AND ((@IsNull_Pr"& _ 
-                "odName = 1 AND [ProdName] IS NULL) OR ([ProdName] = @Original_ProdName)) AND ([P"& _ 
-                "rodMfr] = @Original_ProdMfr) AND ((@IsNull_ProdCtgy = 1 AND [ProdCtgy] IS NULL) "& _ 
-                "OR ([ProdCtgy] = @Original_ProdCtgy)) AND ((@IsNull_ProdPrice = 1 AND [ProdPrice"& _ 
-                "] IS NULL) OR ([ProdPrice] = @Original_ProdPrice)) AND ((@IsNull_ProdQty = 1 AND"& _ 
-                " [ProdQty] IS NULL) OR ([ProdQty] = @Original_ProdQty)) AND ([ProdRelDate] = @Or"& _ 
-                "iginal_ProdRelDate) AND ([ProdRecDate] = @Original_ProdRecDate))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Product] WHERE (([ProdId] = @Original_ProdId) AND ((@IsNull_ProdName"& _ 
+                " = 1 AND [ProdName] IS NULL) OR ([ProdName] = @Original_ProdName)) AND ((@IsNull"& _ 
+                "_ProdMfr = 1 AND [ProdMfr] IS NULL) OR ([ProdMfr] = @Original_ProdMfr)) AND ((@I"& _ 
+                "sNull_ProdCtgy = 1 AND [ProdCtgy] IS NULL) OR ([ProdCtgy] = @Original_ProdCtgy))"& _ 
+                " AND ((@IsNull_ProdPrice = 1 AND [ProdPrice] IS NULL) OR ([ProdPrice] = @Origina"& _ 
+                "l_ProdPrice)) AND ((@IsNull_ProdQty = 1 AND [ProdQty] IS NULL) OR ([ProdQty] = @"& _ 
+                "Original_ProdQty)) AND ((@IsNull_ProdRelDate = 1 AND [ProdRelDate] IS NULL) OR ("& _ 
+                "[ProdRelDate] = @Original_ProdRelDate)) AND ((@IsNull_ProdRecDate = 1 AND [ProdR"& _ 
+                "ecDate] IS NULL) OR ([ProdRecDate] = @Original_ProdRecDate)) AND ((@IsNull_ProdD"& _ 
+                "esc = 1 AND [ProdDesc] IS NULL) OR ([ProdDesc] = @Original_ProdDesc)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdMfr", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdMfr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdMfr", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdCtgy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdCtgy", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdCtgy", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdPrice", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdPrice", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdPrice", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "ProdPrice", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdPrice", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdPrice", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdQty", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdQty", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdRelDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRelDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdRelDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRelDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdRecDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRecDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdRecDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRecDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdDesc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdDesc", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdDesc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Product] ([ProdName], [ProdImg], [ProdMfr], [ProdCtgy], [ProdP"& _ 
-                "rice], [ProdQty], [ProdRelDate], [ProdRecDate]) VALUES (@ProdName, @ProdImg, @Pr"& _ 
-                "odMfr, @ProdCtgy, @ProdPrice, @ProdQty, @ProdRelDate, @ProdRecDate);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Pro"& _ 
-                "dId, ProdName, ProdImg, ProdMfr, ProdCtgy, ProdPrice, ProdQty, ProdRelDate, Prod"& _ 
-                "RecDate FROM Product WHERE (ProdId = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Product] ([ProdName], [ProdMfr], [ProdCtgy], [ProdPrice], [ProdQty],"& _ 
+                " [ProdRelDate], [ProdRecDate], [ProdDesc]) VALUES (@ProdName, @ProdMfr, @ProdCtg"& _ 
+                "y, @ProdPrice, @ProdQty, @ProdRelDate, @ProdRecDate, @ProdDesc);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ProdId,"& _ 
+                " ProdName, ProdMfr, ProdCtgy, ProdPrice, ProdQty, ProdRelDate, ProdRecDate, Prod"& _ 
+                "Desc FROM Product WHERE (ProdId = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdImg", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdImg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdMfr", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdCtgy", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdPrice", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "ProdPrice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdMfr", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdCtgy", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdPrice", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdPrice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdQty", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdRelDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRelDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdRecDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRecDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdDesc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Product] SET [ProdName] = @ProdName, [ProdImg] = @ProdImg, [ProdMfr"& _ 
-                "] = @ProdMfr, [ProdCtgy] = @ProdCtgy, [ProdPrice] = @ProdPrice, [ProdQty] = @Pro"& _ 
-                "dQty, [ProdRelDate] = @ProdRelDate, [ProdRecDate] = @ProdRecDate WHERE (([ProdId"& _ 
-                "] = @Original_ProdId) AND ((@IsNull_ProdName = 1 AND [ProdName] IS NULL) OR ([Pr"& _ 
-                "odName] = @Original_ProdName)) AND ([ProdMfr] = @Original_ProdMfr) AND ((@IsNull"& _ 
-                "_ProdCtgy = 1 AND [ProdCtgy] IS NULL) OR ([ProdCtgy] = @Original_ProdCtgy)) AND "& _ 
-                "((@IsNull_ProdPrice = 1 AND [ProdPrice] IS NULL) OR ([ProdPrice] = @Original_Pro"& _ 
-                "dPrice)) AND ((@IsNull_ProdQty = 1 AND [ProdQty] IS NULL) OR ([ProdQty] = @Origi"& _ 
-                "nal_ProdQty)) AND ([ProdRelDate] = @Original_ProdRelDate) AND ([ProdRecDate] = @"& _ 
-                "Original_ProdRecDate));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ProdId, ProdName, ProdImg, ProdMfr, ProdCtgy, Pr"& _ 
-                "odPrice, ProdQty, ProdRelDate, ProdRecDate FROM Product WHERE (ProdId = @ProdId)"& _ 
-                ""
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Product] SET [ProdName] = @ProdName, [ProdMfr] = @ProdMfr, [ProdCtgy] = @"& _ 
+                "ProdCtgy, [ProdPrice] = @ProdPrice, [ProdQty] = @ProdQty, [ProdRelDate] = @ProdR"& _ 
+                "elDate, [ProdRecDate] = @ProdRecDate, [ProdDesc] = @ProdDesc WHERE (([ProdId] = "& _ 
+                "@Original_ProdId) AND ((@IsNull_ProdName = 1 AND [ProdName] IS NULL) OR ([ProdNa"& _ 
+                "me] = @Original_ProdName)) AND ((@IsNull_ProdMfr = 1 AND [ProdMfr] IS NULL) OR ("& _ 
+                "[ProdMfr] = @Original_ProdMfr)) AND ((@IsNull_ProdCtgy = 1 AND [ProdCtgy] IS NUL"& _ 
+                "L) OR ([ProdCtgy] = @Original_ProdCtgy)) AND ((@IsNull_ProdPrice = 1 AND [ProdPr"& _ 
+                "ice] IS NULL) OR ([ProdPrice] = @Original_ProdPrice)) AND ((@IsNull_ProdQty = 1 "& _ 
+                "AND [ProdQty] IS NULL) OR ([ProdQty] = @Original_ProdQty)) AND ((@IsNull_ProdRel"& _ 
+                "Date = 1 AND [ProdRelDate] IS NULL) OR ([ProdRelDate] = @Original_ProdRelDate)) "& _ 
+                "AND ((@IsNull_ProdRecDate = 1 AND [ProdRecDate] IS NULL) OR ([ProdRecDate] = @Or"& _ 
+                "iginal_ProdRecDate)) AND ((@IsNull_ProdDesc = 1 AND [ProdDesc] IS NULL) OR ([Pro"& _ 
+                "dDesc] = @Original_ProdDesc)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ProdId, ProdName, ProdMfr, ProdCtgy, Pro"& _ 
+                "dPrice, ProdQty, ProdRelDate, ProdRecDate, ProdDesc FROM Product WHERE (ProdId ="& _ 
+                " @ProdId)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdImg", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdImg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdMfr", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdCtgy", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdPrice", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "ProdPrice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdMfr", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdCtgy", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdPrice", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdPrice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdQty", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdRelDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRelDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdRecDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRecDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdDesc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdMfr", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdMfr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdMfr", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdMfr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdCtgy", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdCtgy", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdCtgy", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdCtgy", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdPrice", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdPrice", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdPrice", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "ProdPrice", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdPrice", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdPrice", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdQty", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdQty", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdRelDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRelDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdRelDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRelDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdRecDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRecDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdRecDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdRecDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProdDesc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdDesc", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProdDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdDesc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProdId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ProdId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -1508,8 +1540,8 @@ Namespace AllegroDatabaseDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ProdId, ProdName, ProdImg, ProdMfr, ProdCtgy, ProdPrice, ProdQty, ProdRelD"& _ 
-                "ate, ProdRecDate FROM dbo.Product"
+            Me._commandCollection(0).CommandText = "SELECT ProdId, ProdName, ProdMfr, ProdCtgy, ProdPrice, ProdQty, ProdRelDate, Prod"& _ 
+                "RecDate, ProdDesc FROM Product"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1569,7 +1601,7 @@ Namespace AllegroDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ProdId As Integer, ByVal Original_ProdName As String, ByVal Original_ProdMfr As String, ByVal Original_ProdCtgy As String, ByVal Original_ProdPrice As Global.System.Nullable(Of Decimal), ByVal Original_ProdQty As Global.System.Nullable(Of Integer), ByVal Original_ProdRelDate As Date, ByVal Original_ProdRecDate As Date) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ProdId As Integer, ByVal Original_ProdName As String, ByVal Original_ProdMfr As String, ByVal Original_ProdCtgy As String, ByVal Original_ProdPrice As Global.System.Nullable(Of Decimal), ByVal Original_ProdQty As Global.System.Nullable(Of Integer), ByVal Original_ProdRelDate As Global.System.Nullable(Of Date), ByVal Original_ProdRecDate As Global.System.Nullable(Of Date), ByVal Original_ProdDesc As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ProdId,Integer)
             If (Original_ProdName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -1579,33 +1611,54 @@ Namespace AllegroDatabaseDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_ProdName,String)
             End If
             If (Original_ProdMfr Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_ProdMfr")
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_ProdMfr,String)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_ProdMfr,String)
             End If
             If (Original_ProdCtgy Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_ProdCtgy,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_ProdCtgy,String)
             End If
             If (Original_ProdPrice.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_ProdPrice.Value,Decimal)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_ProdPrice.Value,Decimal)
             Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             If (Original_ProdQty.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_ProdQty.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_ProdQty.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_ProdRelDate,Date)
-            Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_ProdRecDate,Date)
+            If (Original_ProdRelDate.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_ProdRelDate.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ProdRecDate.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_ProdRecDate.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ProdDesc Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_ProdDesc,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1625,39 +1678,47 @@ Namespace AllegroDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal ProdName As String, ByVal ProdImg() As Byte, ByVal ProdMfr As String, ByVal ProdCtgy As String, ByVal ProdPrice As Global.System.Nullable(Of Decimal), ByVal ProdQty As Global.System.Nullable(Of Integer), ByVal ProdRelDate As Date, ByVal ProdRecDate As Date) As Integer
+        Public Overloads Overridable Function Insert(ByVal ProdName As String, ByVal ProdMfr As String, ByVal ProdCtgy As String, ByVal ProdPrice As Global.System.Nullable(Of Decimal), ByVal ProdQty As Global.System.Nullable(Of Integer), ByVal ProdRelDate As Global.System.Nullable(Of Date), ByVal ProdRecDate As Global.System.Nullable(Of Date), ByVal ProdDesc As String) As Integer
             If (ProdName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(ProdName,String)
             End If
-            If (ProdImg Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ProdImg")
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(ProdImg,Byte())
-            End If
             If (ProdMfr Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ProdMfr")
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(ProdMfr,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(ProdMfr,String)
             End If
             If (ProdCtgy Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(ProdCtgy,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(ProdCtgy,String)
             End If
             If (ProdPrice.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(ProdPrice.Value,Decimal)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(ProdPrice.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (ProdQty.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(ProdQty.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (ProdQty.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(ProdQty.Value,Integer)
+            If (ProdRelDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(ProdRelDate.Value,Date)
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(ProdRelDate,Date)
-            Me.Adapter.InsertCommand.Parameters(7).Value = CType(ProdRecDate,Date)
+            If (ProdRecDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(ProdRecDate.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (ProdDesc Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(ProdDesc,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1679,54 +1740,63 @@ Namespace AllegroDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
                     ByVal ProdName As String,  _
-                    ByVal ProdImg() As Byte,  _
                     ByVal ProdMfr As String,  _
                     ByVal ProdCtgy As String,  _
                     ByVal ProdPrice As Global.System.Nullable(Of Decimal),  _
                     ByVal ProdQty As Global.System.Nullable(Of Integer),  _
-                    ByVal ProdRelDate As Date,  _
-                    ByVal ProdRecDate As Date,  _
+                    ByVal ProdRelDate As Global.System.Nullable(Of Date),  _
+                    ByVal ProdRecDate As Global.System.Nullable(Of Date),  _
+                    ByVal ProdDesc As String,  _
                     ByVal Original_ProdId As Integer,  _
                     ByVal Original_ProdName As String,  _
                     ByVal Original_ProdMfr As String,  _
                     ByVal Original_ProdCtgy As String,  _
                     ByVal Original_ProdPrice As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_ProdQty As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ProdRelDate As Date,  _
-                    ByVal Original_ProdRecDate As Date,  _
+                    ByVal Original_ProdRelDate As Global.System.Nullable(Of Date),  _
+                    ByVal Original_ProdRecDate As Global.System.Nullable(Of Date),  _
+                    ByVal Original_ProdDesc As String,  _
                     ByVal ProdId As Integer) As Integer
             If (ProdName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(ProdName,String)
             End If
-            If (ProdImg Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ProdImg")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ProdImg,Byte())
-            End If
             If (ProdMfr Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("ProdMfr")
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ProdMfr,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ProdMfr,String)
             End If
             If (ProdCtgy Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ProdCtgy,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ProdCtgy,String)
             End If
             If (ProdPrice.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ProdPrice.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ProdPrice.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (ProdQty.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ProdQty.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (ProdQty.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(ProdQty.Value,Integer)
+            If (ProdRelDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(ProdRelDate.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ProdRelDate,Date)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ProdRecDate,Date)
+            If (ProdRecDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ProdRecDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (ProdDesc Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ProdDesc,String)
+            End If
             Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_ProdId,Integer)
             If (Original_ProdName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
@@ -1736,34 +1806,55 @@ Namespace AllegroDatabaseDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_ProdName,String)
             End If
             If (Original_ProdMfr Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_ProdMfr")
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ProdMfr,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ProdMfr,String)
             End If
             If (Original_ProdCtgy Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_ProdCtgy,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_ProdCtgy,String)
             End If
             If (Original_ProdPrice.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_ProdPrice.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_ProdPrice.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
             If (Original_ProdQty.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_ProdQty.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ProdQty.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ProdRelDate,Date)
-            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_ProdRecDate,Date)
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(ProdId,Integer)
+            If (Original_ProdRelDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_ProdRelDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ProdRecDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_ProdRecDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ProdDesc Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_ProdDesc,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(ProdId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1785,22 +1876,23 @@ Namespace AllegroDatabaseDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
                     ByVal ProdName As String,  _
-                    ByVal ProdImg() As Byte,  _
                     ByVal ProdMfr As String,  _
                     ByVal ProdCtgy As String,  _
                     ByVal ProdPrice As Global.System.Nullable(Of Decimal),  _
                     ByVal ProdQty As Global.System.Nullable(Of Integer),  _
-                    ByVal ProdRelDate As Date,  _
-                    ByVal ProdRecDate As Date,  _
+                    ByVal ProdRelDate As Global.System.Nullable(Of Date),  _
+                    ByVal ProdRecDate As Global.System.Nullable(Of Date),  _
+                    ByVal ProdDesc As String,  _
                     ByVal Original_ProdId As Integer,  _
                     ByVal Original_ProdName As String,  _
                     ByVal Original_ProdMfr As String,  _
                     ByVal Original_ProdCtgy As String,  _
                     ByVal Original_ProdPrice As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_ProdQty As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ProdRelDate As Date,  _
-                    ByVal Original_ProdRecDate As Date) As Integer
-            Return Me.Update(ProdName, ProdImg, ProdMfr, ProdCtgy, ProdPrice, ProdQty, ProdRelDate, ProdRecDate, Original_ProdId, Original_ProdName, Original_ProdMfr, Original_ProdCtgy, Original_ProdPrice, Original_ProdQty, Original_ProdRelDate, Original_ProdRecDate, Original_ProdId)
+                    ByVal Original_ProdRelDate As Global.System.Nullable(Of Date),  _
+                    ByVal Original_ProdRecDate As Global.System.Nullable(Of Date),  _
+                    ByVal Original_ProdDesc As String) As Integer
+            Return Me.Update(ProdName, ProdMfr, ProdCtgy, ProdPrice, ProdQty, ProdRelDate, ProdRecDate, ProdDesc, Original_ProdId, Original_ProdName, Original_ProdMfr, Original_ProdCtgy, Original_ProdPrice, Original_ProdQty, Original_ProdRelDate, Original_ProdRecDate, Original_ProdDesc, Original_ProdId)
         End Function
     End Class
     
