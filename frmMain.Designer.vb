@@ -118,6 +118,7 @@ Partial Class frmProduct
         Me.ProductTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.ProductTableAdapter()
         Me.TableAdapterManager = New Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.UserTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.UserTableAdapter()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         lblProdId = New System.Windows.Forms.Label()
         lblProdName = New System.Windows.Forms.Label()
         lblProdPrice = New System.Windows.Forms.Label()
@@ -588,6 +589,7 @@ Partial Class frmProduct
         Me.btnNextP.Size = New System.Drawing.Size(119, 29)
         Me.btnNextP.TabIndex = 10
         Me.btnNextP.Text = "Next"
+        Me.ToolTip1.SetToolTip(Me.btnNextP, "Displays next product")
         Me.btnNextP.UseVisualStyleBackColor = False
         '
         'btnBackP
@@ -604,6 +606,7 @@ Partial Class frmProduct
         Me.btnBackP.Size = New System.Drawing.Size(119, 29)
         Me.btnBackP.TabIndex = 9
         Me.btnBackP.Text = "Back"
+        Me.ToolTip1.SetToolTip(Me.btnBackP, "Displays previous product")
         Me.btnBackP.UseVisualStyleBackColor = False
         '
         'btnAdd
@@ -620,6 +623,7 @@ Partial Class frmProduct
         Me.btnAdd.Size = New System.Drawing.Size(119, 29)
         Me.btnAdd.TabIndex = 11
         Me.btnAdd.Text = "Add"
+        Me.ToolTip1.SetToolTip(Me.btnAdd, "Adds product to database")
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnSave
@@ -636,6 +640,7 @@ Partial Class frmProduct
         Me.btnSave.Size = New System.Drawing.Size(119, 29)
         Me.btnSave.TabIndex = 12
         Me.btnSave.Text = "Save"
+        Me.ToolTip1.SetToolTip(Me.btnSave, "Saves product to database")
         Me.btnSave.UseVisualStyleBackColor = False
         '
         'btnDelete
@@ -652,6 +657,7 @@ Partial Class frmProduct
         Me.btnDelete.Size = New System.Drawing.Size(119, 29)
         Me.btnDelete.TabIndex = 13
         Me.btnDelete.Text = "Delete"
+        Me.ToolTip1.SetToolTip(Me.btnDelete, "Deletes product from database")
         Me.btnDelete.UseVisualStyleBackColor = False
         '
         'btnClose
@@ -667,6 +673,7 @@ Partial Class frmProduct
         Me.btnClose.Size = New System.Drawing.Size(119, 29)
         Me.btnClose.TabIndex = 15
         Me.btnClose.Text = "Close"
+        Me.ToolTip1.SetToolTip(Me.btnClose, "Terminates the application")
         Me.btnClose.UseVisualStyleBackColor = False
         '
         'pnlHeader
@@ -780,6 +787,7 @@ Partial Class frmProduct
         Me.btnBack.Size = New System.Drawing.Size(141, 29)
         Me.btnBack.TabIndex = 21
         Me.btnBack.Text = "Back to Products"
+        Me.ToolTip1.SetToolTip(Me.btnBack, "Goes back to products page")
         Me.btnBack.UseVisualStyleBackColor = False
         '
         'Panel1
@@ -871,6 +879,7 @@ Partial Class frmProduct
         Me.btnadProducts.Size = New System.Drawing.Size(141, 29)
         Me.btnadProducts.TabIndex = 23
         Me.btnadProducts.Text = "Back to Products"
+        Me.ToolTip1.SetToolTip(Me.btnadProducts, "Goes back to products page")
         Me.btnadProducts.UseVisualStyleBackColor = False
         '
         'lblPNumber
@@ -975,6 +984,7 @@ Partial Class frmProduct
         Me.pnlProgram.Name = "pnlProgram"
         Me.pnlProgram.Size = New System.Drawing.Size(807, 601)
         Me.pnlProgram.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.pnlProgram, "Goes back to the products page")
         '
         'btnfpProducts
         '
@@ -989,6 +999,7 @@ Partial Class frmProduct
         Me.btnfpProducts.Size = New System.Drawing.Size(141, 29)
         Me.btnfpProducts.TabIndex = 22
         Me.btnfpProducts.Text = "Back to Products"
+        Me.ToolTip1.SetToolTip(Me.btnfpProducts, "Goes back to products page")
         Me.btnfpProducts.UseVisualStyleBackColor = False
         '
         'lblDescr
@@ -1066,8 +1077,8 @@ Partial Class frmProduct
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.CancelButton = Me.btnClose
         Me.ClientSize = New System.Drawing.Size(807, 624)
-        Me.Controls.Add(Me.pnlUser)
         Me.Controls.Add(Me.pnlProducts)
+        Me.Controls.Add(Me.pnlUser)
         Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProgram)
         Me.Controls.Add(Me.mnuMain)
@@ -1190,4 +1201,5 @@ Partial Class frmProduct
     Friend WithEvents btnadProducts As Button
     Friend WithEvents cbxProdCtgy As ComboBox
     Friend WithEvents cbxProdMfr As ComboBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
