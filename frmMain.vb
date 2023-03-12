@@ -75,7 +75,7 @@ Public Class frmProduct
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         pnlUser.Visible = False
         pnlProducts.Visible = True
-        pnlProducts.Visible = False
+        pnlDeveloper.Visible = False
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
