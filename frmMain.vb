@@ -66,6 +66,14 @@ Public Class frmProduct
         pnlProgram.Visible = False
     End Sub
 
+    'Maes only Products Management panel visible when clicked. Found in Menu Strip.
+    Private Sub OpenProductToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenProductToolStripMenuItem.Click
+        pnlUser.Visible = False
+        pnlProducts.Visible = True
+        pnlDeveloper.Visible = False
+        pnlProgram.Visible = False
+    End Sub
+
     ''Makes only Developer panel visible when clicked
     Private Sub AboutDeveloperToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutDeveloperToolStripMenuItem.Click
         pnlUser.Visible = False
@@ -230,22 +238,30 @@ detailed information about each item in your inventory, such as the product name
 quantity category, manufacturer, year of production, and any additional relevant information"
     End Sub
 
-    'Takes you to my CS210 website when you click the label 
+    'Takes you to Aiden Castillo's CS210 website when you click the label 
     Private Sub lblWebsite_Click(sender As Object, e As EventArgs) Handles lblWebsite.Click
         Dim website As String
         website = "http://aidcascs210.byethost15.com/"
         Process.Start(website)
     End Sub
 
+    'Takes you to Luis Garcia's CS210 Website when you clic the label
+    Private Sub lblWebsiteDev2_Click(sender As Object, e As EventArgs) Handles lblWebsiteDev2.Click
+        Dim websiteDev2 As String
+        websiteDev2 = "http://luigar59.byethost10.com/"
+        Process.Start(websiteDev2)
+    End Sub
+
     'Displays text for Developer panel when it loads
     Private Sub pnlDeveloper_Paint(sender As Object, e As PaintEventArgs) Handles pnlDeveloper.Paint
-        lblAboutMe.Text = "Hello there, I'm the developer of this program. I'm officially apart of the LAAG, which 
-focuses on the development of Windows Desktop Applications. We try our best in creating a 
-user-friendly interface that enables users to easily input and access information."
+        lblAboutMe.Text = "Hello there, we're the developers of this program. We're officially apart of LAAG, which 
+is a company that focuses on the development of Windows Desktop Applications. We try our 
+best in creating a user-friendly interface that enables users to easily input and access information."
     End Sub
 
     'Displays text for User Viewer panel when it loads
     Private Sub pnlUser_Paint(sender As Object, e As PaintEventArgs) Handles pnlUser.Paint
         lblUserViewerDesc.Text = " View information about users in system."
     End Sub
+
 End Class

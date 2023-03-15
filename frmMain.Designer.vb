@@ -101,6 +101,15 @@ Partial Class frmProduct
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.pnlDeveloper = New System.Windows.Forms.Panel()
+        Me.lblPhoneDev2 = New System.Windows.Forms.Label()
+        Me.lblAddressDev2 = New System.Windows.Forms.Label()
+        Me.lblEmailDev2 = New System.Windows.Forms.Label()
+        Me.lblWebsiteDev2 = New System.Windows.Forms.Label()
+        Me.lblContactDev2 = New System.Windows.Forms.Label()
+        Me.lblNameDev2 = New System.Windows.Forms.Label()
+        Me.pnlAboutDevHeader = New System.Windows.Forms.Panel()
+        Me.lblAboutDevHead = New System.Windows.Forms.Label()
+        Me.pctDeveloper2 = New System.Windows.Forms.PictureBox()
         Me.btnadProducts = New System.Windows.Forms.Button()
         Me.lblPNumber = New System.Windows.Forms.Label()
         Me.lblAddress = New System.Windows.Forms.Label()
@@ -122,6 +131,9 @@ Partial Class frmProduct
         Me.TableAdapterManager = New Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager()
         Me.UserTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.UserTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.pnlAboutProgram = New System.Windows.Forms.Panel()
+        Me.lblAboutProgramHeader = New System.Windows.Forms.Label()
+        Me.OpenProductToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         lblProdId = New System.Windows.Forms.Label()
         lblProdName = New System.Windows.Forms.Label()
         lblProdPrice = New System.Windows.Forms.Label()
@@ -145,9 +157,12 @@ Partial Class frmProduct
         CType(Me.dgvUser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlDeveloper.SuspendLayout()
+        Me.pnlAboutDevHeader.SuspendLayout()
+        CType(Me.pctDeveloper2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctDeveloper, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlProgram.SuspendLayout()
         CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlAboutProgram.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblProdId
@@ -257,7 +272,7 @@ Partial Class frmProduct
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.OpenProductToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Image = CType(resources.GetObject("FileToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
@@ -268,7 +283,7 @@ Partial Class frmProduct
         Me.OpenToolStripMenuItem.Image = CType(resources.GetObject("OpenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(267, 22)
         Me.OpenToolStripMenuItem.Text = "&Open User Viewer"
         '
         'ExitToolStripMenuItem
@@ -568,7 +583,6 @@ Partial Class frmProduct
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -899,6 +913,14 @@ Partial Class frmProduct
         '
         'pnlDeveloper
         '
+        Me.pnlDeveloper.Controls.Add(Me.lblPhoneDev2)
+        Me.pnlDeveloper.Controls.Add(Me.lblAddressDev2)
+        Me.pnlDeveloper.Controls.Add(Me.lblEmailDev2)
+        Me.pnlDeveloper.Controls.Add(Me.lblWebsiteDev2)
+        Me.pnlDeveloper.Controls.Add(Me.lblContactDev2)
+        Me.pnlDeveloper.Controls.Add(Me.lblNameDev2)
+        Me.pnlDeveloper.Controls.Add(Me.pnlAboutDevHeader)
+        Me.pnlDeveloper.Controls.Add(Me.pctDeveloper2)
         Me.pnlDeveloper.Controls.Add(Me.btnadProducts)
         Me.pnlDeveloper.Controls.Add(Me.lblPNumber)
         Me.pnlDeveloper.Controls.Add(Me.lblAddress)
@@ -913,6 +935,102 @@ Partial Class frmProduct
         Me.pnlDeveloper.Size = New System.Drawing.Size(807, 601)
         Me.pnlDeveloper.TabIndex = 27
         '
+        'lblPhoneDev2
+        '
+        Me.lblPhoneDev2.AutoSize = True
+        Me.lblPhoneDev2.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPhoneDev2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblPhoneDev2.Location = New System.Drawing.Point(491, 453)
+        Me.lblPhoneDev2.Name = "lblPhoneDev2"
+        Me.lblPhoneDev2.Size = New System.Drawing.Size(192, 19)
+        Me.lblPhoneDev2.TabIndex = 31
+        Me.lblPhoneDev2.Text = "Phone Number: 613-5213"
+        '
+        'lblAddressDev2
+        '
+        Me.lblAddressDev2.AutoSize = True
+        Me.lblAddressDev2.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAddressDev2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAddressDev2.Location = New System.Drawing.Point(452, 418)
+        Me.lblAddressDev2.Name = "lblAddressDev2"
+        Me.lblAddressDev2.Size = New System.Drawing.Size(296, 19)
+        Me.lblAddressDev2.TabIndex = 30
+        Me.lblAddressDev2.Text = "Address: Trial Farm Village, Orange Walk"
+        '
+        'lblEmailDev2
+        '
+        Me.lblEmailDev2.AutoSize = True
+        Me.lblEmailDev2.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmailDev2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblEmailDev2.Location = New System.Drawing.Point(486, 383)
+        Me.lblEmailDev2.Name = "lblEmailDev2"
+        Me.lblEmailDev2.Size = New System.Drawing.Size(199, 19)
+        Me.lblEmailDev2.TabIndex = 29
+        Me.lblEmailDev2.Text = "Email: luigar59@cjc.edu.bz"
+        '
+        'lblWebsiteDev2
+        '
+        Me.lblWebsiteDev2.AutoSize = True
+        Me.lblWebsiteDev2.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWebsiteDev2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblWebsiteDev2.Location = New System.Drawing.Point(443, 348)
+        Me.lblWebsiteDev2.Name = "lblWebsiteDev2"
+        Me.lblWebsiteDev2.Size = New System.Drawing.Size(290, 19)
+        Me.lblWebsiteDev2.TabIndex = 28
+        Me.lblWebsiteDev2.Text = "Website: http://luigar59.byethost10.com"
+        '
+        'lblContactDev2
+        '
+        Me.lblContactDev2.AutoSize = True
+        Me.lblContactDev2.Font = New System.Drawing.Font("Inter", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContactDev2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblContactDev2.Location = New System.Drawing.Point(490, 309)
+        Me.lblContactDev2.Name = "lblContactDev2"
+        Me.lblContactDev2.Size = New System.Drawing.Size(196, 23)
+        Me.lblContactDev2.TabIndex = 27
+        Me.lblContactDev2.Text = "Contact Information"
+        '
+        'lblNameDev2
+        '
+        Me.lblNameDev2.AutoSize = True
+        Me.lblNameDev2.Font = New System.Drawing.Font("Inter", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNameDev2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblNameDev2.Location = New System.Drawing.Point(466, 268)
+        Me.lblNameDev2.Name = "lblNameDev2"
+        Me.lblNameDev2.Size = New System.Drawing.Size(244, 25)
+        Me.lblNameDev2.TabIndex = 26
+        Me.lblNameDev2.Text = "Developer: Luis Garcia"
+        '
+        'pnlAboutDevHeader
+        '
+        Me.pnlAboutDevHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.pnlAboutDevHeader.Controls.Add(Me.lblAboutDevHead)
+        Me.pnlAboutDevHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlAboutDevHeader.Name = "pnlAboutDevHeader"
+        Me.pnlAboutDevHeader.Size = New System.Drawing.Size(807, 34)
+        Me.pnlAboutDevHeader.TabIndex = 25
+        '
+        'lblAboutDevHead
+        '
+        Me.lblAboutDevHead.AutoSize = True
+        Me.lblAboutDevHead.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAboutDevHead.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAboutDevHead.Location = New System.Drawing.Point(4, 11)
+        Me.lblAboutDevHead.Name = "lblAboutDevHead"
+        Me.lblAboutDevHead.Size = New System.Drawing.Size(143, 19)
+        Me.lblAboutDevHead.TabIndex = 0
+        Me.lblAboutDevHead.Text = "About Developer"
+        '
+        'pctDeveloper2
+        '
+        Me.pctDeveloper2.Image = CType(resources.GetObject("pctDeveloper2.Image"), System.Drawing.Image)
+        Me.pctDeveloper2.Location = New System.Drawing.Point(511, 127)
+        Me.pctDeveloper2.Name = "pctDeveloper2"
+        Me.pctDeveloper2.Size = New System.Drawing.Size(155, 125)
+        Me.pctDeveloper2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pctDeveloper2.TabIndex = 24
+        Me.pctDeveloper2.TabStop = False
+        '
         'btnadProducts
         '
         Me.btnadProducts.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
@@ -921,7 +1039,7 @@ Partial Class frmProduct
         Me.btnadProducts.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnadProducts.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnadProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnadProducts.Location = New System.Drawing.Point(333, 505)
+        Me.btnadProducts.Location = New System.Drawing.Point(333, 530)
         Me.btnadProducts.Name = "btnadProducts"
         Me.btnadProducts.Size = New System.Drawing.Size(141, 29)
         Me.btnadProducts.TabIndex = 23
@@ -934,7 +1052,7 @@ Partial Class frmProduct
         Me.lblPNumber.AutoSize = True
         Me.lblPNumber.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPNumber.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblPNumber.Location = New System.Drawing.Point(306, 458)
+        Me.lblPNumber.Location = New System.Drawing.Point(137, 453)
         Me.lblPNumber.Name = "lblPNumber"
         Me.lblPNumber.Size = New System.Drawing.Size(194, 19)
         Me.lblPNumber.TabIndex = 10
@@ -945,7 +1063,7 @@ Partial Class frmProduct
         Me.lblAddress.AutoSize = True
         Me.lblAddress.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAddress.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAddress.Location = New System.Drawing.Point(267, 417)
+        Me.lblAddress.Location = New System.Drawing.Point(98, 418)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(273, 19)
         Me.lblAddress.TabIndex = 9
@@ -956,7 +1074,7 @@ Partial Class frmProduct
         Me.lblEmail.AutoSize = True
         Me.lblEmail.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmail.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblEmail.Location = New System.Drawing.Point(301, 376)
+        Me.lblEmail.Location = New System.Drawing.Point(132, 383)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(205, 19)
         Me.lblEmail.TabIndex = 8
@@ -967,7 +1085,7 @@ Partial Class frmProduct
         Me.lblWebsite.AutoSize = True
         Me.lblWebsite.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWebsite.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblWebsite.Location = New System.Drawing.Point(244, 335)
+        Me.lblWebsite.Location = New System.Drawing.Point(75, 348)
         Me.lblWebsite.Name = "lblWebsite"
         Me.lblWebsite.Size = New System.Drawing.Size(318, 19)
         Me.lblWebsite.TabIndex = 7
@@ -978,7 +1096,7 @@ Partial Class frmProduct
         Me.lblContact.AutoSize = True
         Me.lblContact.Font = New System.Drawing.Font("Inter", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblContact.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblContact.Location = New System.Drawing.Point(305, 290)
+        Me.lblContact.Location = New System.Drawing.Point(136, 309)
         Me.lblContact.Name = "lblContact"
         Me.lblContact.Size = New System.Drawing.Size(196, 23)
         Me.lblContact.TabIndex = 6
@@ -989,26 +1107,27 @@ Partial Class frmProduct
         Me.lblAboutMe.AutoSize = True
         Me.lblAboutMe.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAboutMe.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAboutMe.Location = New System.Drawing.Point(134, 215)
+        Me.lblAboutMe.Location = New System.Drawing.Point(112, 51)
         Me.lblAboutMe.Name = "lblAboutMe"
         Me.lblAboutMe.Size = New System.Drawing.Size(0, 16)
         Me.lblAboutMe.TabIndex = 5
+        Me.lblAboutMe.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Font = New System.Drawing.Font("Inter", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblName.Location = New System.Drawing.Point(248, 151)
+        Me.lblName.Location = New System.Drawing.Point(97, 268)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(311, 29)
+        Me.lblName.Size = New System.Drawing.Size(275, 25)
         Me.lblName.TabIndex = 2
         Me.lblName.Text = "Developer: Aiden Castillo"
         '
         'pctDeveloper
         '
         Me.pctDeveloper.Image = CType(resources.GetObject("pctDeveloper.Image"), System.Drawing.Image)
-        Me.pctDeveloper.Location = New System.Drawing.Point(326, 17)
+        Me.pctDeveloper.Location = New System.Drawing.Point(157, 127)
         Me.pctDeveloper.Name = "pctDeveloper"
         Me.pctDeveloper.Size = New System.Drawing.Size(155, 125)
         Me.pctDeveloper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1021,6 +1140,7 @@ Partial Class frmProduct
         '
         'pnlProgram
         '
+        Me.pnlProgram.Controls.Add(Me.pnlAboutProgram)
         Me.pnlProgram.Controls.Add(Me.btnfpProducts)
         Me.pnlProgram.Controls.Add(Me.lblDescr)
         Me.pnlProgram.Controls.Add(Me.lblRDate)
@@ -1064,7 +1184,7 @@ Partial Class frmProduct
         Me.lblRDate.AutoSize = True
         Me.lblRDate.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRDate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblRDate.Location = New System.Drawing.Point(327, 198)
+        Me.lblRDate.Location = New System.Drawing.Point(327, 254)
         Me.lblRDate.Name = "lblRDate"
         Me.lblRDate.Size = New System.Drawing.Size(152, 19)
         Me.lblRDate.TabIndex = 3
@@ -1075,7 +1195,7 @@ Partial Class frmProduct
         Me.lblVersion.AutoSize = True
         Me.lblVersion.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVersion.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblVersion.Location = New System.Drawing.Point(358, 179)
+        Me.lblVersion.Location = New System.Drawing.Point(358, 225)
         Me.lblVersion.Name = "lblVersion"
         Me.lblVersion.Size = New System.Drawing.Size(90, 19)
         Me.lblVersion.TabIndex = 2
@@ -1086,7 +1206,7 @@ Partial Class frmProduct
         Me.lblAllegro.AutoSize = True
         Me.lblAllegro.Font = New System.Drawing.Font("Inter", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAllegro.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAllegro.Location = New System.Drawing.Point(354, 150)
+        Me.lblAllegro.Location = New System.Drawing.Point(354, 186)
         Me.lblAllegro.Name = "lblAllegro"
         Me.lblAllegro.Size = New System.Drawing.Size(98, 29)
         Me.lblAllegro.TabIndex = 1
@@ -1095,7 +1215,7 @@ Partial Class frmProduct
         'pctAllegro
         '
         Me.pctAllegro.Image = CType(resources.GetObject("pctAllegro.Image"), System.Drawing.Image)
-        Me.pctAllegro.Location = New System.Drawing.Point(328, 24)
+        Me.pctAllegro.Location = New System.Drawing.Point(328, 50)
         Me.pctAllegro.Name = "pctAllegro"
         Me.pctAllegro.Size = New System.Drawing.Size(151, 126)
         Me.pctAllegro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1117,6 +1237,34 @@ Partial Class frmProduct
         '
         Me.UserTableAdapter.ClearBeforeFill = True
         '
+        'pnlAboutProgram
+        '
+        Me.pnlAboutProgram.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.pnlAboutProgram.Controls.Add(Me.lblAboutProgramHeader)
+        Me.pnlAboutProgram.Location = New System.Drawing.Point(0, 0)
+        Me.pnlAboutProgram.Name = "pnlAboutProgram"
+        Me.pnlAboutProgram.Size = New System.Drawing.Size(807, 34)
+        Me.pnlAboutProgram.TabIndex = 23
+        '
+        'lblAboutProgramHeader
+        '
+        Me.lblAboutProgramHeader.AutoSize = True
+        Me.lblAboutProgramHeader.Font = New System.Drawing.Font("Inter", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAboutProgramHeader.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblAboutProgramHeader.Location = New System.Drawing.Point(4, 11)
+        Me.lblAboutProgramHeader.Name = "lblAboutProgramHeader"
+        Me.lblAboutProgramHeader.Size = New System.Drawing.Size(129, 19)
+        Me.lblAboutProgramHeader.TabIndex = 0
+        Me.lblAboutProgramHeader.Text = "About Program"
+        '
+        'OpenProductToolStripMenuItem
+        '
+        Me.OpenProductToolStripMenuItem.Image = CType(resources.GetObject("OpenProductToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.OpenProductToolStripMenuItem.Name = "OpenProductToolStripMenuItem"
+        Me.OpenProductToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.M), System.Windows.Forms.Keys)
+        Me.OpenProductToolStripMenuItem.Size = New System.Drawing.Size(267, 22)
+        Me.OpenProductToolStripMenuItem.Text = "Open Product &Management"
+        '
         'frmProduct
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1124,9 +1272,9 @@ Partial Class frmProduct
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.CancelButton = Me.btnClose
         Me.ClientSize = New System.Drawing.Size(807, 624)
+        Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProducts)
         Me.Controls.Add(Me.pnlUser)
-        Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProgram)
         Me.Controls.Add(Me.mnuMain)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1155,10 +1303,15 @@ Partial Class frmProduct
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlDeveloper.ResumeLayout(False)
         Me.pnlDeveloper.PerformLayout()
+        Me.pnlAboutDevHeader.ResumeLayout(False)
+        Me.pnlAboutDevHeader.PerformLayout()
+        CType(Me.pctDeveloper2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pctDeveloper, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlProgram.ResumeLayout(False)
         Me.pnlProgram.PerformLayout()
         CType(Me.pctAllegro, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlAboutProgram.ResumeLayout(False)
+        Me.pnlAboutProgram.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1253,4 +1406,16 @@ Partial Class frmProduct
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents lblUserViewerDesc As Label
+    Friend WithEvents pctDeveloper2 As PictureBox
+    Friend WithEvents pnlAboutDevHeader As Panel
+    Friend WithEvents lblAboutDevHead As Label
+    Friend WithEvents lblPhoneDev2 As Label
+    Friend WithEvents lblAddressDev2 As Label
+    Friend WithEvents lblEmailDev2 As Label
+    Friend WithEvents lblWebsiteDev2 As Label
+    Friend WithEvents lblContactDev2 As Label
+    Friend WithEvents lblNameDev2 As Label
+    Friend WithEvents pnlAboutProgram As Panel
+    Friend WithEvents lblAboutProgramHeader As Label
+    Friend WithEvents OpenProductToolStripMenuItem As ToolStripMenuItem
 End Class

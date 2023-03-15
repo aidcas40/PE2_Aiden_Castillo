@@ -1,6 +1,6 @@
 ﻿'----------------------------------------------------------------------------------
 'Program Title: 		Allegro
-'Program Author: 		Aiden Castillo
+'Program Author: 		Aiden Castillo & Luis Garcia
 'Date Created:  		11 March, 2023
 'School:			    Corozal Junior College
 'Course Number/Name:	CS206 - Programming II
