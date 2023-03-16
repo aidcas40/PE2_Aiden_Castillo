@@ -147,6 +147,10 @@ Public Class frmProduct
     'Adds new item to the Product Table
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         BindingNavigatorAddNewItem.PerformClick()
+
+        'Re-bind the data source to refresh the DataGridView
+        dgvProduct.DataSource = Nothing 'Clear the current data source
+        dgvProduct.DataSource = search1() 'Re-bind the DataGridView to the updated search results
     End Sub
 
     'Deletes an item from the Product Table
@@ -155,6 +159,10 @@ Public Class frmProduct
         Dim msgDelete = MessageBox.Show("Are you sure you want to delete this item?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If msgDelete = Windows.Forms.DialogResult.Yes Then
             BindingNavigatorDeleteItem.PerformClick()
+
+            'Re-bind the data source to refresh the DataGridView
+            dgvProduct.DataSource = Nothing 'Clear the current data source
+            dgvProduct.DataSource = search1() 'Re-bind the DataGridView to the updated search results
         Else
             Exit Sub
         End If
@@ -167,6 +175,10 @@ Public Class frmProduct
             MessageBox.Show("Please enter a value in all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             ProductBindingNavigatorSaveItem.PerformClick()
+
+            'Re-bind the data source to refresh the DataGridView
+            dgvProduct.DataSource = Nothing 'Clear the current data source
+            dgvProduct.DataSource = search1() 'Re-bind the DataGridView to the updated search results
         End If
     End Sub
 
@@ -198,7 +210,9 @@ Public Class frmProduct
 
     'Using search1() on a textbox. Search is active when the text in the textbox is changed/typed
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        search1()
+        If txtSearch.Focused Then
+            search1()
+        End If
     End Sub
 
     'Closes the entire application. Message box ask for confirmation to close application

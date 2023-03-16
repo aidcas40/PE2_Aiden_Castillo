@@ -1272,9 +1272,9 @@ Partial Class frmProduct
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.CancelButton = Me.btnClose
         Me.ClientSize = New System.Drawing.Size(807, 624)
-        Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProducts)
         Me.Controls.Add(Me.pnlUser)
+        Me.Controls.Add(Me.pnlDeveloper)
         Me.Controls.Add(Me.pnlProgram)
         Me.Controls.Add(Me.mnuMain)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
