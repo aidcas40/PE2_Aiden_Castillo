@@ -1,5 +1,4 @@
-﻿'Imports System.Drawing.Print
-Imports System.IO
+﻿Imports System.IO
 Imports System.Data
 Imports System.Data.SqlClient
 Public Class frmProduct

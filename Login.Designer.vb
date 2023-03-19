@@ -27,6 +27,9 @@ Partial Class frmLogin
         Dim lblUserPwd As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.pnlLogin = New System.Windows.Forms.Panel()
+        Me.btnLogExit = New System.Windows.Forms.Button()
+        Me.pctPwd = New System.Windows.Forms.PictureBox()
+        Me.pctUsername = New System.Windows.Forms.PictureBox()
         Me.txtUserPwd = New System.Windows.Forms.TextBox()
         Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AllegroDatabaseDataSet = New Allegro.AllegroDatabaseDataSet()
@@ -37,16 +40,14 @@ Partial Class frmLogin
         Me.lblAllegro = New System.Windows.Forms.Label()
         Me.UserTableAdapter = New Allegro.AllegroDatabaseDataSetTableAdapters.UserTableAdapter()
         Me.TableAdapterManager = New Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager()
-        Me.pctUsername = New System.Windows.Forms.PictureBox()
-        Me.pctPwd = New System.Windows.Forms.PictureBox()
         lblUserName = New System.Windows.Forms.Label()
         lblUserPwd = New System.Windows.Forms.Label()
         Me.pnlLogin.SuspendLayout()
+        CType(Me.pctPwd, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pctUsername, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pctUsername, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pctPwd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblUserName
@@ -75,6 +76,7 @@ Partial Class frmLogin
         'pnlLogin
         '
         Me.pnlLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.pnlLogin.Controls.Add(Me.btnLogExit)
         Me.pnlLogin.Controls.Add(Me.pctPwd)
         Me.pnlLogin.Controls.Add(Me.pctUsername)
         Me.pnlLogin.Controls.Add(lblUserPwd)
@@ -88,6 +90,41 @@ Partial Class frmLogin
         Me.pnlLogin.Size = New System.Drawing.Size(348, 280)
         Me.pnlLogin.TabIndex = 0
         '
+        'btnLogExit
+        '
+        Me.btnLogExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btnLogExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnLogExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnLogExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnLogExit.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogExit.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnLogExit.Location = New System.Drawing.Point(179, 190)
+        Me.btnLogExit.Name = "btnLogExit"
+        Me.btnLogExit.Size = New System.Drawing.Size(119, 29)
+        Me.btnLogExit.TabIndex = 3
+        Me.btnLogExit.Text = "&Exit"
+        Me.btnLogExit.UseVisualStyleBackColor = False
+        '
+        'pctPwd
+        '
+        Me.pctPwd.Image = CType(resources.GetObject("pctPwd.Image"), System.Drawing.Image)
+        Me.pctPwd.Location = New System.Drawing.Point(18, 150)
+        Me.pctPwd.Name = "pctPwd"
+        Me.pctPwd.Size = New System.Drawing.Size(24, 21)
+        Me.pctPwd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pctPwd.TabIndex = 10
+        Me.pctPwd.TabStop = False
+        '
+        'pctUsername
+        '
+        Me.pctUsername.Image = CType(resources.GetObject("pctUsername.Image"), System.Drawing.Image)
+        Me.pctUsername.Location = New System.Drawing.Point(18, 94)
+        Me.pctUsername.Name = "pctUsername"
+        Me.pctUsername.Size = New System.Drawing.Size(24, 21)
+        Me.pctUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pctUsername.TabIndex = 9
+        Me.pctUsername.TabStop = False
+        '
         'txtUserPwd
         '
         Me.txtUserPwd.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -98,7 +135,7 @@ Partial Class frmLogin
         Me.txtUserPwd.Name = "txtUserPwd"
         Me.txtUserPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtUserPwd.Size = New System.Drawing.Size(250, 15)
-        Me.txtUserPwd.TabIndex = 8
+        Me.txtUserPwd.TabIndex = 1
         Me.txtUserPwd.UseSystemPasswordChar = True
         '
         'UserBindingSource
@@ -120,7 +157,7 @@ Partial Class frmLogin
         Me.txtUserName.MaxLength = 25
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(250, 15)
-        Me.txtUserName.TabIndex = 7
+        Me.txtUserName.TabIndex = 0
         '
         'btnLogin
         '
@@ -129,11 +166,11 @@ Partial Class frmLogin
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnLogin.Font = New System.Drawing.Font("Inter", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnLogin.Location = New System.Drawing.Point(114, 211)
+        Me.btnLogin.Location = New System.Drawing.Point(48, 190)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(119, 29)
-        Me.btnLogin.TabIndex = 5
-        Me.btnLogin.Text = "Login"
+        Me.btnLogin.TabIndex = 2
+        Me.btnLogin.Text = "&Login"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
         'lblLogin
@@ -179,33 +216,15 @@ Partial Class frmLogin
         Me.TableAdapterManager.UpdateOrder = Allegro.AllegroDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UserTableAdapter = Me.UserTableAdapter
         '
-        'pctUsername
-        '
-        Me.pctUsername.Image = CType(resources.GetObject("pctUsername.Image"), System.Drawing.Image)
-        Me.pctUsername.Location = New System.Drawing.Point(18, 94)
-        Me.pctUsername.Name = "pctUsername"
-        Me.pctUsername.Size = New System.Drawing.Size(24, 21)
-        Me.pctUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pctUsername.TabIndex = 9
-        Me.pctUsername.TabStop = False
-        '
-        'pctPwd
-        '
-        Me.pctPwd.Image = CType(resources.GetObject("pctPwd.Image"), System.Drawing.Image)
-        Me.pctPwd.Location = New System.Drawing.Point(18, 150)
-        Me.pctPwd.Name = "pctPwd"
-        Me.pctPwd.Size = New System.Drawing.Size(24, 21)
-        Me.pctPwd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pctPwd.TabIndex = 10
-        Me.pctPwd.TabStop = False
-        '
         'frmLogin
         '
+        Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CancelButton = Me.btnLogExit
         Me.ClientSize = New System.Drawing.Size(784, 415)
         Me.Controls.Add(Me.lblAllegro)
         Me.Controls.Add(Me.pctLogo)
@@ -218,11 +237,11 @@ Partial Class frmLogin
         Me.Text = "Allegro"
         Me.pnlLogin.ResumeLayout(False)
         Me.pnlLogin.PerformLayout()
+        CType(Me.pctPwd, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pctUsername, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AllegroDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pctLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pctUsername, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pctPwd, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -241,4 +260,5 @@ Partial Class frmLogin
     Friend WithEvents txtUserName As TextBox
     Friend WithEvents pctPwd As PictureBox
     Friend WithEvents pctUsername As PictureBox
+    Friend WithEvents btnLogExit As Button
 End Class

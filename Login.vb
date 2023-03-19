@@ -43,4 +43,14 @@ Public Class frmLogin
         End If
 
     End Sub
+
+    'Exit button for Login form
+    Private Sub btnLogExit_Click(sender As Object, e As EventArgs) Handles btnLogExit.Click
+        Dim msgLogExit = MessageBox.Show("Are you sure you want to close the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If msgLogExit = Windows.Forms.DialogResult.Yes Then
+            Application.Exit()
+        Else
+            Exit Sub
+        End If
+    End Sub
 End Class
